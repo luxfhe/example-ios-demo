@@ -1,0 +1,11 @@
+numpy
+fastapi
+uvicorn
+PyYAML
+python-multipart
+concrete_ml_extensions==0.1.7
+celery[redis]
+redis
+python-dotenv
+requests
+werkzeug>=3.0.0

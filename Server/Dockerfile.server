@@ -1,0 +1,74 @@
+# ===========================
+# Stage 1: Build Rust binaries (built separately with --rebuild-rust)
+# ===========================
+FROM rust:1.84 AS rust-builder
+
+# Set working directory
+WORKDIR /build
+
+# Copy only the Rust-related files
+COPY build_tasks.sh .
+COPY tasks/ tasks/
+
+# Run the build script
+RUN ./build_tasks.sh
+
+# ===========================
+# Stage 2: Final image
+# ===========================
+FROM nvidia/cuda:12.8.1-runtime-rockylinux9 AS zama-ios-apps
+
+# Set environment variables
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install system-level packages
+RUN dnf -y groupinstall "Development Tools" --nobest && \
+    dnf -y install make python3 python3-pip procps-ng --nobest && \
+    dnf install -y gcc --nobest && \
+    dnf clean all
+
+# Install Python-level packages
+RUN pip3 install --no-cache-dir python-dotenv
+
+# Set working directory
+WORKDIR /project
+RUN mkdir -p /project/data
+
+# Copy Python dependencies, configuration files and Python server
+COPY server_requirements.txt tasks.yaml server.py scripts/entrypoint.sh utils.py task_executor.py ./
+COPY tasks/ad_targeting/data/onehot_ads.pkl /project/data/onehot_ads.pkl
+
+# Install Python dependencies
+RUN pip3 install --no-cache-dir -r server_requirements.txt
+
+# ===========================
+# Stage 3: Final image
+# ===========================
+FROM zama-ios-apps
+
+# Copy Rust binaries from the rust-builder stage
+COPY --from=rust-builder /build/bin/* ./
+
+# Make binaries and entrypoint script executable
+RUN chmod +x ./* && chmod +x /project/entrypoint.sh
+
+# Add a non-root user and group
+# Ensure that the mounted volumes have the correct permissions
+# sudo chown -R 10000:10001 backup_files uploaded_files
+RUN groupadd -g 10001 grp02 && \
+    useradd -u 10000 -g grp02 usr01 && \
+    chown -R usr01:grp02 /project
+
+# Expose necessary ports
+EXPOSE 80
+EXPOSE 5000
+
+# Switch to the non-root user
+USER usr01:grp02
+
+# Set the entrypoint
+ENTRYPOINT ["/project/entrypoint.sh"]
+
+# In multi-stage build setup, Docker creates intermediate images. 
+# They sometimes appear in the form `<none>:<none>` see: `docker image ls`
+# To clean them, do `docker image prune`
