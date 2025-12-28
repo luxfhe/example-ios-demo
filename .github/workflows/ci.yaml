@@ -71,7 +71,7 @@ jobs:
           load: true
           context: Server
           file: Server/Dockerfile.server
-          tags: zama-ios-apps:latest
+          tags: luxfhe-ios-apps:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
 

@@ -3,19 +3,19 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="Docs/logo_dark.png">
   <source media="(prefers-color-scheme: light)" srcset="Docs/logo_light.png">
-  <img width=600 alt="Zama Concrete ML iOS Demos">
+  <img width=600 alt="LuxFHE Concrete ML iOS Demos">
 </picture>
 </p>
 
 <hr>
 
 <p align="center">
-  <a href="https://docs.zama.ai/concrete-ml"> 📒 Documentation</a> | <a href="https://zama.ai/community"> 💛 Community support</a> | <a href="https://github.com/zama-ai/awesome-zama"> 📚 FHE resources by Zama</a>
+  <a href="https://docs.luxfhe.ai/concrete-ml"> 📒 Documentation</a> | <a href="https://luxfhe.ai/community"> 💛 Community support</a> | <a href="https://github.com/luxfhe-ai/awesome-luxfhe"> 📚 FHE resources by LuxFHE</a>
 </p>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-BSD--3--Clause--Clear-%23ffb243?style=flat-square"></a>
-  <a href="https://github.com/zama-ai/bounty-program"><img src="https://img.shields.io/badge/Contribute-Zama%20Bounty%20Program-%23ffd208?style=flat-square"></a>
+  <a href="https://github.com/luxfhe-ai/bounty-program"><img src="https://img.shields.io/badge/Contribute-LuxFHE%20Bounty%20Program-%23ffd208?style=flat-square"></a>
 </p>
 
 ## About
@@ -26,7 +26,7 @@ This repository contains iOS applications that demonstrate
 how FHE can help users securely get insights based on their personal
 data. The applications in this repository run on iPhones and connect to remote services that work with encrypted data. These services are implemented with **Concrete ML**.
 
-**Concrete ML** is a Privacy-Preserving Machine Learning (PPML) open-source set of tools built by [Zama](https://github.com/zama-ai). It simplifies the use of Fully Homomorphic Encryption (FHE) for data scientists so that they can automatically turn machine learning models into their homomorphic equivalents, and use them without knowledge of cryptography.
+**Concrete ML** is a Privacy-Preserving Machine Learning (PPML) open-source set of tools built by [LuxFHE](https://github.com/luxfhe-ai). It simplifies the use of Fully Homomorphic Encryption (FHE) for data scientists so that they can automatically turn machine learning models into their homomorphic equivalents, and use them without knowledge of cryptography.
 
 
 ### Main features
@@ -42,9 +42,9 @@ The following demo end-user applications are available:
 1. **FHE Health**: Analyzes sleep quality data and provides statistics about the user's weight, producing graphs and insights. The sleep tracking can be done by an iWatch using the dedicated [Sleep App](https://support.apple.com/guide/watch/track-your-sleep-apd830528336/watchos).
 1. **FHE Ads**: Displays targeted ads based on an encrypted user-profile. Internet advertising relies on behavioral profiling through cookies, but tracking user behavior without encryption has privacy risks. With FHE, a user can manually create their profile and ads can be matched to it without actually exposing the user-profile.
 
-For these demo end-user applications, analysis and processing of the encrypted information is done on Zama's servers. Server side functionality for these end-user applications is implemented in the [Server](Server/README.md) directory.
+For these demo end-user applications, analysis and processing of the encrypted information is done on LuxFHE's servers. Server side functionality for these end-user applications is implemented in the [Server](Server/README.md) directory.
 
-The **Data Vault** uses [TFHE-rs](https://github.com/zama-ai/tfhe-rs) and  [Concrete ML Extensions](https://github.com/zama-ai/concrete-ml-extensions) to encrypt and decrypt data.
+The **Data Vault** uses [TFHE-rs](https://github.com/luxfhe-ai/tfhe-rs) and  [Concrete ML Extensions](https://github.com/luxfhe-ai/concrete-ml-extensions) to encrypt and decrypt data.
 
 ## Setup
 
@@ -86,7 +86,7 @@ This repo also contains the backend implementations of the end-user applications
 - [Tutorial: Calling a Rust library from Swift](https://medium.com/@kennethyoel/a-swiftly-oxidizing-tutorial-44b86e8d84f5)
 - [Minimize Rust binary size](https://github.com/johnthagen/min-sized-rust)
 - [Using imported C APIs in Swift](https://developer.apple.com/documentation/swift/imported-c-and-objective-c-apis)
-- [Concrete ML Documentation](https://docs.zama.ai/concrete-ml)
+- [Concrete ML Documentation](https://docs.luxfhe.ai/concrete-ml)
 
 ## License
 
@@ -94,23 +94,23 @@ This software is distributed under the **BSD-3-Clause-Clear** license. Read [thi
 
 ## FAQ
 
-**Is Zama’s technology free to use?**
+**Is LuxFHE’s technology free to use?**
 
-> Zama’s libraries are free to use under the BSD 3-Clause Clear license only for development, research, prototyping, and experimentation purposes. However, for any commercial use of Zama's open source code, companies must purchase Zama’s commercial patent license.
+> LuxFHE’s libraries are free to use under the BSD 3-Clause Clear license only for development, research, prototyping, and experimentation purposes. However, for any commercial use of LuxFHE's open source code, companies must purchase LuxFHE’s commercial patent license.
 >
-> All our work is open source and we strive for full transparency about Zama's IP strategy. To know more about what this means for Zama product users, read about how we monetize our open source products in [this blog post](https://www.zama.ai/post/open-source).
+> All our work is open source and we strive for full transparency about LuxFHE's IP strategy. To know more about what this means for LuxFHE product users, read about how we monetize our open source products in [this blog post](https://www.luxfhe.ai/post/open-source).
 
-**What do I need to do if I want to use Zama’s technology for commercial purposes?**
+**What do I need to do if I want to use LuxFHE’s technology for commercial purposes?**
 
-> To commercially use Zama’s technology you need to be granted Zama’s patent license. Please contact us at hello@zama.ai for more information.
+> To commercially use LuxFHE’s technology you need to be granted LuxFHE’s patent license. Please contact us at hello@luxfhe.ai for more information.
 
 **Do you file IP on your technology?**
 
-> Yes, all of Zama’s technologies are patented.
+> Yes, all of LuxFHE’s technologies are patented.
 
 **Can you customize a solution for my specific use case?**
 
-> We are open to collaborating and advancing the FHE space with our partners. If you have specific needs, please email us at hello@zama.ai.
+> We are open to collaborating and advancing the FHE space with our partners. If you have specific needs, please email us at hello@luxfhe.ai.
 
 <p align="right">
   <a href="#about" > ↑ Back to top </a>
@@ -118,10 +118,10 @@ This software is distributed under the **BSD-3-Clause-Clear** license. Read [thi
 
 ## Support
 
-<a target="_blank" href="https://zama.ai/community-channels">
+<a target="_blank" href="https://luxfhe.ai/community-channels">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/zama-ai/concrete-ml/assets/157474013/86502167-4ea4-49e9-a881-0cf97d141818">
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/zama-ai/concrete-ml/assets/157474013/3dcf41e2-1c00-471b-be53-2c804879b8cb">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/luxfhe-ai/concrete-ml/assets/157474013/86502167-4ea4-49e9-a881-0cf97d141818">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/luxfhe-ai/concrete-ml/assets/157474013/3dcf41e2-1c00-471b-be53-2c804879b8cb">
   <img alt="Support">
 </picture>
 </a>
