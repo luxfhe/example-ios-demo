@@ -1,0 +1,82 @@
+## User settings
+xcuserdata/
+
+## Obj-C/Swift specific
+*.hmap
+
+## App packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Swift Package Manager
+#
+# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
+# Packages/
+# Package.pins
+# Package.resolved
+# *.xcodeproj
+#
+# Xcode automatically generates this directory with a .xcworkspacedata file and xcuserdata
+# hence it is not needed unless you have added a package configuration file to your project
+# .swiftpm
+
+.build/
+
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo.
+# Instead, use fastlane to re-generate the screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/#source-control
+
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+
+# General
+.DS_Store
+.LSOverride
+
+# Thumbnails
+._*
+
+# 3rd party Frameworks (TFHE.xcframework, ConcreteMLExtensions.xcframework)
+Frameworks/
+
+# AdImages (cf README)
+QLAdsExtension/AdImages
+
+# Server
+Server/url.txt
+Server/.venv
+Server/.venv/**
+Server/.venvclient
+Server/rust_folder/Cargo.lock
+Server/rust_folder/target
+Server/rust_array_stats/target
+Server/rust_array_stats/Cargo.lock
+Server/client_files/*
+Server/uploaded_files/*.serverKey
+Server/tasks/weight_stats/target
+Server/secrets.env
+Server/project/uploaded_files/*
+Server/uploaded_files/*
+Server/.venvclient
+Server/.venvserver
+
+Server/tasks/weight_stats/Cargo.lock
+Server/tasks/sleep_quality/Cargo.lock
+
+**/__pycache__/
+
+.venv_test/
+Server/tasks/sleep_quality/target
+Server/cert/
