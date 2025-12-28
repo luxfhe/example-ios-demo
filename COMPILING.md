@@ -26,7 +26,7 @@ rustup component add rust-src --toolchain nightly-aarch64-apple-darwin
 
 1. Get TFHE-rs:
 ```shell
-git clone --branch https://github.com/zama-ai/tfhe-rs.git
+git clone --branch https://github.com/luxfhe.io/tfhe-rs.git
 ```
 
 2. Compile for both iOS and iOS simulator targets:
@@ -79,4 +79,4 @@ Finally, move the `TFHE.xcframework` directory into the root directory of the iO
 
 ## 3. Compile Concrete ML Extensions for use in Swift
 
-Follow the [instructions in the Concrete ML Extensions](https://github.com/zama-ai/concrete-ml-extensions?tab=readme-ov-file#from-source-for-ios) package to build additional Swift bindings that are used by **Data Vault**.
+Follow the [instructions in the Concrete ML Extensions](https://github.com/luxfhe.io/concrete-ml-extensions?tab=readme-ov-file#from-source-for-ios) package to build additional Swift bindings that are used by **Data Vault**.

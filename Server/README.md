@@ -65,7 +65,7 @@ To run this project, make sure you have the following installed on your machine:
 #### 2. Clone and set up the project
 
 ```bash
-git clone https://<USERNAME>:<TOKEN>@github.com/zama-ai/fhe_ios_demo.git
+git clone https://<USERNAME>:<TOKEN>@github.com/luxfhe.io/fhe_ios_demo.git
 cd fhe_ios_demo/Server/
 python -m venv .venv
 source .venv/bin/activate
@@ -75,7 +75,7 @@ source .venv/bin/activate
 
 By default, Docker launches in local (dev) mode, and all API calls will go through localhost.
 
-Although the production domain _https://api.zama.ai_ exists, it requires a secure SSL connection and cannot be used without proper credentials.
+Although the production domain _https://api.luxfhe.io_ exists, it requires a secure SSL connection and cannot be used without proper credentials.
 
 ```bash
 make docker_build
