@@ -8,10 +8,10 @@ final class Storage {
         case publicKey = "publicKeyCompact"
         case serverKey = "serverKeyCompressed"
         
-        case concretePrivateKey = "concretePrivateKey"
-        case concreteCPUCompressionKey = "concreteCPUCompressionKey"
-        case concreteEncryptedProfile = "concreteProfile.fheencrypted"
-        case concreteEncryptedResult = "concreteResult.fheencryptedAd"
+        case torusPrivateKey = "torusPrivateKey"
+        case torusCPUCompressionKey = "torusCPUCompressionKey"
+        case torusEncryptedProfile = "torusProfile.fheencrypted"
+        case torusEncryptedResult = "torusResult.fheencryptedAd"
         
         case weightList = "weightList.fheencrypted"
         case weightMin = "weightMin.fheencrypted"
@@ -30,8 +30,8 @@ final class Storage {
             case .weightMin, .weightMax, .weightAvg:  .int16
                 
             case .clientKey, .publicKey, .serverKey: nil
-            case .concretePrivateKey, .concreteCPUCompressionKey,
-                    .concreteEncryptedProfile, .concreteEncryptedResult: nil
+            case .torusPrivateKey, .torusCPUCompressionKey,
+                    .torusEncryptedProfile, .torusEncryptedResult: nil
             }
         }
         
@@ -50,13 +50,13 @@ final class Storage {
             case .clientKey:
                     .privateToAppAndExtensions(groupID: "group.ai.zama.fhedemo.healthPrivate")
                 
-            case .concretePrivateKey:
+            case .torusPrivateKey:
                     .privateToAppAndExtensions(groupID: "group.ai.zama.fhedemo.adsPrivate")
                 
             case .sleepList, .sleepScore,
                     .weightList, .weightMin, .weightMax, .weightAvg,
                     .publicKey, .serverKey,
-                    .concreteCPUCompressionKey, .concreteEncryptedProfile, .concreteEncryptedResult:
+                    .torusCPUCompressionKey, .torusEncryptedProfile, .torusEncryptedResult:
                     .groupShared(groupID: "group.ai.zama.fhedemo.shared")
             }
         }

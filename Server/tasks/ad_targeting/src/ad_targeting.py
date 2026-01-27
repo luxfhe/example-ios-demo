@@ -3,7 +3,7 @@
 import pickle as pkl
 import sys
 
-import concrete_ml_extensions as fhext
+import torus_ml_extensions as fhext
 import numpy as np
 
 from time import time

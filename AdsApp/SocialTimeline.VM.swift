@@ -44,7 +44,7 @@ extension SocialTimeline {
                 return
             }
             
-            guard let sk = await Storage.read(.concreteCPUCompressionKey) else {
+            guard let sk = await Storage.read(.torusCPUCompressionKey) else {
                 throw CustomError.missingServerKey
             }
             
@@ -56,7 +56,7 @@ extension SocialTimeline {
         }
         
         private func startProfileUpload(uid: String) async throws {
-            guard let profile = await Storage.read(.concreteEncryptedProfile) else {
+            guard let profile = await Storage.read(.torusEncryptedProfile) else {
                 throw CustomError.missingServerKey
             }
             
@@ -78,7 +78,7 @@ extension SocialTimeline {
             let result = try await Network.shared.getAdTargetingResult(taskID: taskID, uid: uid)
             for position in 0..<Self.adsLimit {
                 // Duplicating result for each ad to display. Limitation of how QL works.
-                try await Storage.write(.concreteEncryptedResult, data: result, suffix: "\(profileHash)-\(position)")
+                try await Storage.write(.torusEncryptedResult, data: result, suffix: "\(profileHash)-\(position)")
                 Self.profileHash = profileHash
             }
             self.taskID = nil

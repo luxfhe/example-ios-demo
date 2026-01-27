@@ -48,7 +48,7 @@ fastlane/test_output
 # Thumbnails
 ._*
 
-# 3rd party Frameworks (TFHE.xcframework, ConcreteMLExtensions.xcframework)
+# 3rd party Frameworks (TFHE.xcframework, TorusMLExtensions.xcframework)
 Frameworks/
 
 # AdImages (cf README)

@@ -11,13 +11,13 @@
 		322658A22D6E20AD004BB59A /* QLAdsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 322658952D6E20AD004BB59A /* QLAdsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3226D94C2D38168D00595BBC /* TFHE.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3226D94B2D38168D00595BBC /* TFHE.xcframework */; };
 		3226D9512D3816A500595BBC /* TFHE.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3226D94B2D38168D00595BBC /* TFHE.xcframework */; };
-		322B62082D72210F009881A9 /* ConcreteMLExtensions.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3226D94E2D38169A00595BBC /* ConcreteMLExtensions.xcframework */; };
-		322B62092D72210F009881A9 /* concrete_ml_extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3226D9532D3816DD00595BBC /* concrete_ml_extensions.swift */; };
+		322B62082D72210F009881A9 /* TorusMLExtensions.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3226D94E2D38169A00595BBC /* TorusMLExtensions.xcframework */; };
+		322B62092D72210F009881A9 /* torus_ml_extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3226D9532D3816DD00595BBC /* torus_ml_extensions.swift */; };
 		322E72BB2CC9A636009B2530 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 322E72BA2CC9A636009B2530 /* Algorithms */; };
 		324F8E2A2CA43B2100F0BB11 /* QLHealthExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 324F8E1D2CA43B2100F0BB11 /* QLHealthExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		32543D8D2D47EFA4007600B2 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32543D8C2D47EFA4007600B2 /* QuickLook.framework */; };
-		32738D232D89D7870040C27A /* concrete_ml_extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3226D9532D3816DD00595BBC /* concrete_ml_extensions.swift */; };
-		32738D242D89D78C0040C27A /* ConcreteMLExtensions.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3226D94E2D38169A00595BBC /* ConcreteMLExtensions.xcframework */; };
+		32738D232D89D7870040C27A /* torus_ml_extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3226D9532D3816DD00595BBC /* torus_ml_extensions.swift */; };
+		32738D242D89D78C0040C27A /* TorusMLExtensions.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3226D94E2D38169A00595BBC /* TorusMLExtensions.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +55,8 @@
 /* Begin PBXFileReference section */
 		322658952D6E20AD004BB59A /* QLAdsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QLAdsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		3226D94B2D38168D00595BBC /* TFHE.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TFHE.xcframework; path = Frameworks/TFHE.xcframework; sourceTree = "<group>"; };
-		3226D94E2D38169A00595BBC /* ConcreteMLExtensions.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ConcreteMLExtensions.xcframework; path = Frameworks/ConcreteMLExtensions.xcframework; sourceTree = "<group>"; };
-		3226D9532D3816DD00595BBC /* concrete_ml_extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = concrete_ml_extensions.swift; path = Frameworks/concrete_ml_extensions.swift; sourceTree = "<group>"; };
+		3226D94E2D38169A00595BBC /* TorusMLExtensions.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TorusMLExtensions.xcframework; path = Frameworks/TorusMLExtensions.xcframework; sourceTree = "<group>"; };
+		3226D9532D3816DD00595BBC /* torus_ml_extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = torus_ml_extensions.swift; path = Frameworks/torus_ml_extensions.swift; sourceTree = "<group>"; };
 		324F8E1D2CA43B2100F0BB11 /* QLHealthExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QLHealthExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		32543D8C2D47EFA4007600B2 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		328F5CB32D009CA800D7B219 /* FHE Ads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FHE Ads.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +69,7 @@
 		320C391B2CAAEEA200528366 /* Exceptions for "Shared" folder in "DataVault" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"Helpers-ConcreteML/ConcreteML.swift",
+				"Helpers-TorusML/TorusML.swift",
 				"Helpers-TFHE/CompactCiphertextList.swift",
 				"Helpers-TFHE/FHEHelpers.swift",
 				"Helpers-TFHE/FHEUInt8.swift",
@@ -170,7 +170,7 @@
 		322659832D6E2F50004BB59A /* Exceptions for "Shared" folder in "QLAdsExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"Helpers-ConcreteML/ConcreteML.swift",
+				"Helpers-TorusML/TorusML.swift",
 				"Helpers-Zama/Files/Storage.swift",
 				"Reusable/Data+snippet.swift",
 				ZamaUI/CustomFont/CustomFont.swift,
@@ -307,7 +307,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				322B62082D72210F009881A9 /* ConcreteMLExtensions.xcframework in Frameworks */,
+				322B62082D72210F009881A9 /* TorusMLExtensions.xcframework in Frameworks */,
 				322658962D6E20AD004BB59A /* QuickLook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,7 +334,7 @@
 			files = (
 				3226D94C2D38168D00595BBC /* TFHE.xcframework in Frameworks */,
 				322E72BB2CC9A636009B2530 /* Algorithms in Frameworks */,
-				32738D242D89D78C0040C27A /* ConcreteMLExtensions.xcframework in Frameworks */,
+				32738D242D89D78C0040C27A /* TorusMLExtensions.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,8 +352,8 @@
 			isa = PBXGroup;
 			children = (
 				32543D8C2D47EFA4007600B2 /* QuickLook.framework */,
-				3226D9532D3816DD00595BBC /* concrete_ml_extensions.swift */,
-				3226D94E2D38169A00595BBC /* ConcreteMLExtensions.xcframework */,
+				3226D9532D3816DD00595BBC /* torus_ml_extensions.swift */,
+				3226D94E2D38169A00595BBC /* TorusMLExtensions.xcframework */,
 				3226D94B2D38168D00595BBC /* TFHE.xcframework */,
 			);
 			name = Frameworks;
@@ -599,7 +599,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				322B62092D72210F009881A9 /* concrete_ml_extensions.swift in Sources */,
+				322B62092D72210F009881A9 /* torus_ml_extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,7 +621,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32738D232D89D7870040C27A /* concrete_ml_extensions.swift in Sources */,
+				32738D232D89D7870040C27A /* torus_ml_extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

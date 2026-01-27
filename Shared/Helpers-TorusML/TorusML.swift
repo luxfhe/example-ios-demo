@@ -2,8 +2,8 @@
 
 import Foundation
 
-/// ConcreteML keygen and encryption utilities, used by both `DataVault` app and `AdsQuickLook` extension binaries
-enum ConcreteML {
+/// TorusML keygen and encryption utilities, used by both `DataVault` app and `AdsQuickLook` extension binaries
+enum TorusML {
     static var cryptoParamsString: String? = {
         do {
             let jsonString = defaultParams()
@@ -39,8 +39,8 @@ enum ConcreteML {
             let keys = cpuCreatePrivateKey(cryptoParams: cryptoParams) // 23 sec
             let pk = keys.privateKey()
             let ck = keys.cpuCompressionKey()
-            try await Storage.write(.concretePrivateKey, data: try await serializePrivateKey(pk)) // 33 KB, instant
-            try await Storage.write(.concreteCPUCompressionKey, data: try await serializeCompressionKey(ck)) // 67 MB, 2.5s
+            try await Storage.write(.torusPrivateKey, data: try await serializePrivateKey(pk)) // 33 KB, instant
+            try await Storage.write(.torusCPUCompressionKey, data: try await serializeCompressionKey(ck)) // 67 MB, 2.5s
             return (pk, ck)
         }.value
     }
