@@ -12,7 +12,7 @@ sys.path.insert(0, str(Path(__file__).parent.resolve()))
 import numpy as np
 import pickle as pkl
 import json
-import concrete_ml_extensions as fhext
+import torus_ml_extensions as fhext
 
 # For Rust tasks, import their Python modules
 import weight_stats # from tasks/weight_stats (after maturin develop)
@@ -158,9 +158,9 @@ def main():
 
     # Ensure tools for ad_targeting are available
     try:
-        import concrete_ml_extensions
+        import torus_ml_extensions
     except ImportError:
-        print("ERROR: Could not import 'concrete_ml_extensions'.")
+        print("ERROR: Could not import 'torus_ml_extensions'.")
         print("Ensure it's installed in your environment.")
         exit(1)
     if not AD_TARGETING_DATA_PATH.exists():

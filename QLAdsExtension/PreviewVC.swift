@@ -41,15 +41,15 @@ final class PreviewVC: UIViewController, QLPreviewingController {
         print("Rendering ", url.lastPathComponent, suffix, position)
         
         guard let resultData = await Storage.read(url),
-              let savedPK = await Storage.read(.concretePrivateKey),
-              let cryptoParams = ConcreteML.cryptoParams
+              let savedPK = await Storage.read(.torusPrivateKey),
+              let cryptoParams = TorusML.cryptoParams
         else {
             print("QL: cannot read ClientKey or file at \(url)")
             throw NSError(domain: "App", code: 1, userInfo: [NSLocalizedDescriptionKey: "QL: cannot read ClientKey or file at \(url)!"])
         }
         
         // Decryption…
-        let privateKey = await ConcreteML.deserializePrivateKey(from: savedPK)
+        let privateKey = await TorusML.deserializePrivateKey(from: savedPK)
         let compressedMatrix = try compressedResultEncryptedMatrixDeserialize(content: resultData)
         let rawResult: [[UInt64]] = try decryptMatrix(compressedMatrix: compressedMatrix,
                                                       privateKey: privateKey,

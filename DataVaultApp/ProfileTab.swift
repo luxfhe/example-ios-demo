@@ -22,7 +22,7 @@ struct ProfileTab: View {
                     interestsGrid()
                     buttonsArea()
                     ConsoleSection(title: "FHE Encryption", output: vm.consoleOutput)
-                    concreteKeyManagementSection()
+                    torusKeyManagementSection()
                     Spacer()
                 }
                 .padding(.horizontal, 30)
@@ -162,29 +162,29 @@ struct ProfileTab: View {
     }
     
     @ViewBuilder
-    private func concreteKeyManagementSection() -> some View {
+    private func torusKeyManagementSection() -> some View {
         VStack(spacing: 10) {
-            Text("Concrete ML Key Management")
+            Text("Torus ML Key Management")
                 .customFont(.title3)
                 .frame(maxWidth: .infinity, alignment: .leading)
-            
-            AsyncButton("Refresh Concrete ML Keys") {
-                await vm.refreshConcreteMLKeys()
+
+            AsyncButton("Refresh Torus ML Keys") {
+                await vm.refreshTorusMLKeys()
             }
             .buttonStyle(.zama)
-            
+
             Text("If a FHE friendly app (like FHE Ads) reports issues, use this to ensure your local FHE keys (PrivateKey, PublicKey) are correctly generated and saved.")
                 .customFont(.caption)
                 .foregroundStyle(.gray)
                 .multilineTextAlignment(.leading)
-            
-            if !vm.concreteKeyRefreshConsoleOutput.isEmpty {
+
+            if !vm.torusKeyRefreshConsoleOutput.isEmpty {
                 Button("Clear Key Refresh Log") {
-                    vm.concreteKeyRefreshConsoleOutput = ""
+                    vm.torusKeyRefreshConsoleOutput = ""
                 }
                 .customFont(.caption)
                 .tint(.gray)
-                ConsoleSection(title: "Concrete ML Key Refresh Log", output: vm.concreteKeyRefreshConsoleOutput)
+                ConsoleSection(title: "Torus ML Key Refresh Log", output: vm.torusKeyRefreshConsoleOutput)
             }
         }
     }
@@ -203,7 +203,7 @@ extension ProfileTab {
 
         @Published var profileOnDisk: Bool
         @Published var consoleOutput: String = "Profile Encryption Details:"
-        @Published var concreteKeyRefreshConsoleOutput: String = ""
+        @Published var torusKeyRefreshConsoleOutput: String = ""
         
         private var pk: PrivateKey?
         
@@ -230,49 +230,49 @@ extension ProfileTab {
         }
         
         private func loadKeys() async throws {
-            if let savedPK = await Storage.read(.concretePrivateKey) {
-                self.pk = await ConcreteML.deserializePrivateKey(from: savedPK)
+            if let savedPK = await Storage.read(.torusPrivateKey) {
+                self.pk = await TorusML.deserializePrivateKey(from: savedPK)
             } else {
-                let (newPK, _) = try await ConcreteML.generateAndPersistKeys()
+                let (newPK, _) = try await TorusML.generateAndPersistKeys()
                 self.pk = newPK
             }
         }
         
-        func refreshConcreteMLKeys() async {
-            var log = "Attempting to refresh Concrete ML keys...\n\n"
-            concreteKeyRefreshConsoleOutput = log
+        func refreshTorusMLKeys() async {
+            var log = "Attempting to refresh Torus ML keys...\n\n"
+            torusKeyRefreshConsoleOutput = log
             do {
                 do {
-                    try await Storage.deleteFromDisk(.concretePrivateKey)
-                    log += "Deleted existing Concrete ML PrivateKey from disk.\n"
+                    try await Storage.deleteFromDisk(.torusPrivateKey)
+                    log += "Deleted existing Torus ML PrivateKey from disk.\n"
                 } catch {
                     log += "Could not delete old PrivateKey: \(error.localizedDescription).\n"
                 }
-                
-                let (newPK, _) = try await ConcreteML.generateAndPersistKeys()
+
+                let (newPK, _) = try await TorusML.generateAndPersistKeys()
                 self.pk = newPK
-                log += "Successfully regenerated new Concrete ML PrivateKey.\n"
-                
+                log += "Successfully regenerated new Torus ML PrivateKey.\n"
+
                 profileOnDisk = false
                 encryptedClearProfile = nil
                 validateProfile()
-                
+
                 if completedProfile != nil {
-                    try? await Storage.deleteFromDisk(.concreteEncryptedProfile)
+                    try? await Storage.deleteFromDisk(.torusEncryptedProfile)
                     log += "Deleted previously encrypted profile data from disk.\n"
                 }
-                
-                log += "Concrete ML key refresh complete.\n"
-                concreteKeyRefreshConsoleOutput = log
+
+                log += "Torus ML key refresh complete.\n"
+                torusKeyRefreshConsoleOutput = log
             } catch {
-                log += "Error during Concrete ML key refresh: \(error.localizedDescription)\n"
-                concreteKeyRefreshConsoleOutput = log
+                log += "Error during Torus ML key refresh: \(error.localizedDescription)\n"
+                torusKeyRefreshConsoleOutput = log
             }
         }
         
         func refreshFromDisk() {
             Task {
-                let data = await Storage.read(.concreteEncryptedProfile)
+                let data = await Storage.read(.torusEncryptedProfile)
                 self.profileOnDisk = data != nil
             }
         }
@@ -304,7 +304,7 @@ extension ProfileTab {
             self.consoleOutput = ""
             self.consoleOutput += "Encrypting profile…\n\n"
             
-            guard let pk, let cryptoParams = ConcreteML.cryptoParams, let completedProfile else {
+            guard let pk, let cryptoParams = TorusML.cryptoParams, let completedProfile else {
                 throw NSError(domain: "Cannot encrypt profile", code: 0, userInfo: nil)
             }
             
@@ -314,7 +314,7 @@ extension ProfileTab {
                 .replacingOccurrences(of: ", ", with: ",\n  ")
             
             self.consoleOutput += "\(profileLogged)\n\n"
-            self.consoleOutput += "Crypto Params: \(ConcreteML.cryptoParamsString ?? "nil")\n\n"
+            self.consoleOutput += "Crypto Params: \(TorusML.cryptoParamsString ?? "nil")\n\n"
             
             let oneHot = [completedProfile.oneHotBinary]
             self.consoleOutput += "OneHot: \(oneHot)\n\n"
@@ -326,12 +326,12 @@ extension ProfileTab {
             self.consoleOutput += "Encrypted Profile hash: \(data.stableHashValue)\n\n"
             self.consoleOutput += "Encrypted Profile snippet (first 100 bytes): \(data.snippet(first: 100))\n\n"
 
-            try await Storage.write(.concreteEncryptedProfile, data: data)
+            try await Storage.write(.torusEncryptedProfile, data: data)
             profileOnDisk = true
             encryptedClearProfile = completedProfile
             hasPendingChanges = completedProfile != encryptedClearProfile
 
-            self.consoleOutput += "Saved at \(Storage.url(for: .concreteEncryptedProfile))\n"
+            self.consoleOutput += "Saved at \(Storage.url(for: .torusEncryptedProfile))\n"
         }
     }
 }
