@@ -11,7 +11,7 @@ import requests
 from sklearn.datasets import load_breast_cancer
 from tqdm import tqdm
 
-URL = os.environ.get("URL", f"https://api.zama.ai")
+URL = os.environ.get("URL", f"https://api.lux.network")
 
 STATUS_OK = 200
 ROOT = Path(__file__).parent / "client"

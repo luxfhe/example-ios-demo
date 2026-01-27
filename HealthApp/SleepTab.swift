@@ -1,4 +1,4 @@
-// Copyright © 2025 Zama. All rights reserved.
+// Copyright © 2025 Lux. All rights reserved.
 
 import SwiftUI
 
@@ -20,7 +20,7 @@ struct SleepTab: View {
             ScrollView {
                 VStack(spacing: 16) {
                     if vm.allSamples.isEmpty {
-                        OpenAppButton(.zamaDataVault(tab: .sleep))
+                        OpenAppButton(.luxDataVault(tab: .sleep))
                     } else if let sample = vm.selectedSample {
                         
                         let isProcessing = if case .progress = vm.status { true } else { false }
@@ -93,11 +93,11 @@ struct SleepTab: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding()
                         
-                        ZamaCalendar(covering: vm.samplesInterval ?? Calendar.current.dateInterval(of: .month, for: .now)!,
+                        LuxCalendar(covering: vm.samplesInterval ?? Calendar.current.dateInterval(of: .month, for: .now)!,
                                      selection: $selectedDate,
                                      canSelect: { item in vm.allSamples.contains { $0.date == item } })
                     }
-                    .background(Color.zamaYellowLight)
+                    .background(Color.luxYellowLight)
                     .onChange(of: selectedDate) {
                         Task {
                             try await Task.sleep(for: .seconds(0.1))
@@ -111,8 +111,8 @@ struct SleepTab: View {
             }
             .navigationTitle("Sleep Analysis")
             .padding()
-            .buttonStyle(.zama)
-            .background(Color.zamaYellowLight)
+            .buttonStyle(.lux)
+            .background(Color.luxYellowLight)
             .onAppearAgain {
                 vm.refreshFromDisk()
             }

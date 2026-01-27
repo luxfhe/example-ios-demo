@@ -1,4 +1,4 @@
-// Copyright © 2025 Zama. All rights reserved.
+// Copyright © 2025 Lux. All rights reserved.
 
 import Foundation
 
@@ -48,16 +48,16 @@ final class Storage {
         var confidentiality: Confidentiality {
             switch self {
             case .clientKey:
-                    .privateToAppAndExtensions(groupID: "group.ai.zama.fhedemo.healthPrivate")
+                    .privateToAppAndExtensions(groupID: "group.ai.luxfhe.fhedemo.healthPrivate")
                 
             case .torusPrivateKey:
-                    .privateToAppAndExtensions(groupID: "group.ai.zama.fhedemo.adsPrivate")
+                    .privateToAppAndExtensions(groupID: "group.ai.luxfhe.fhedemo.adsPrivate")
                 
             case .sleepList, .sleepScore,
                     .weightList, .weightMin, .weightMax, .weightAvg,
                     .publicKey, .serverKey,
                     .torusCPUCompressionKey, .torusEncryptedProfile, .torusEncryptedResult:
-                    .groupShared(groupID: "group.ai.zama.fhedemo.shared")
+                    .groupShared(groupID: "group.ai.luxfhe.fhedemo.shared")
             }
         }
         
@@ -75,9 +75,9 @@ final class Storage {
     
     private init() {
         let folders = [
-            "Shared Folder": fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.ai.zama.fhedemo.shared"),
-            "Private Folder (Health)": fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.ai.zama.fhedemo.healthPrivate"),
-            "Private Folder (Ads)": fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.ai.zama.fhedemo.adsPrivate")
+            "Shared Folder": fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.ai.luxfhe.fhedemo.shared"),
+            "Private Folder (Health)": fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.ai.luxfhe.fhedemo.healthPrivate"),
+            "Private Folder (Ads)": fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.ai.luxfhe.fhedemo.adsPrivate")
         ].compactMapValues({ $0?.appending(component: "v12") })
         
         do {

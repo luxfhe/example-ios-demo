@@ -60,7 +60,7 @@
 		324F8E1D2CA43B2100F0BB11 /* QLHealthExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QLHealthExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		32543D8C2D47EFA4007600B2 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		328F5CB32D009CA800D7B219 /* FHE Ads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FHE Ads.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		32B258372C98693800538B23 /* ZAMA Data Vault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ZAMA Data Vault.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32B258372C98693800538B23 /* Lux Data Vault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lux Data Vault.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32B258512C9869A700538B23 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		32C9CC202CA565A100AEDA32 /* FHE Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FHE Health.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -79,9 +79,9 @@
 				"Helpers-TFHE/Keys/ClientKey.swift",
 				"Helpers-TFHE/Keys/PublicKeyCompact.swift",
 				"Helpers-TFHE/Keys/ServerKeyCompressed.swift",
-				"Helpers-Zama/Files/Persistable.swift",
-				"Helpers-Zama/Files/Storage.swift",
-				"Helpers-Zama/SleepModels.swift",
+				"Helpers-Lux/Files/Persistable.swift",
+				"Helpers-Lux/Files/Storage.swift",
+				"Helpers-Lux/SleepModels.swift",
 				Reusable/AsyncButton.swift,
 				Reusable/CopyableText.swift,
 				"Reusable/Data+hash.swift",
@@ -90,24 +90,24 @@
 				Reusable/OpenAppButton.swift,
 				Reusable/PrettyTypeNamable.swift,
 				Reusable/UserDefaultsStorage.swift,
-				ZamaUI/CustomFont/CustomFont.swift,
-				"ZamaUI/CustomFont/Telegraf-Bold.ttf",
-				"ZamaUI/CustomFont/Telegraf-Regular.ttf",
-				"ZamaUI/CustomFont/Telegraf-UltraBold.ttf",
-				ZamaUI/SharedAssets.xcassets,
-				ZamaUI/ZamaButtons.swift,
-				ZamaUI/ZamaConfig.swift,
-				ZamaUI/ZamaLink.swift,
+				LuxUI/CustomFont/CustomFont.swift,
+				"LuxUI/CustomFont/Telegraf-Bold.ttf",
+				"LuxUI/CustomFont/Telegraf-Regular.ttf",
+				"LuxUI/CustomFont/Telegraf-UltraBold.ttf",
+				LuxUI/SharedAssets.xcassets,
+				LuxUI/LuxButtons.swift,
+				LuxUI/LuxConfig.swift,
+				LuxUI/LuxLink.swift,
 			);
 			target = 32B258362C98693800538B23 /* DataVault */;
 		};
 		320C391D2CAAEEA200528366 /* Exceptions for "Shared" folder in "Health" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"Helpers-Zama/Files/Persistable.swift",
-				"Helpers-Zama/Files/Storage.swift",
-				"Helpers-Zama/Network.swift",
-				"Helpers-Zama/SleepModels.swift",
+				"Helpers-Lux/Files/Persistable.swift",
+				"Helpers-Lux/Files/Storage.swift",
+				"Helpers-Lux/Network.swift",
+				"Helpers-Lux/SleepModels.swift",
 				Reusable/AsyncButton.swift,
 				Reusable/CustomizableCalendar.swift,
 				"Reusable/Data+hash.swift",
@@ -118,14 +118,14 @@
 				Reusable/OpenAppButton.swift,
 				Reusable/PrettyTypeNamable.swift,
 				Reusable/UserDefaultsStorage.swift,
-				ZamaUI/CustomFont/CustomFont.swift,
-				"ZamaUI/CustomFont/Telegraf-Bold.ttf",
-				"ZamaUI/CustomFont/Telegraf-Regular.ttf",
-				"ZamaUI/CustomFont/Telegraf-UltraBold.ttf",
-				ZamaUI/SharedAssets.xcassets,
-				ZamaUI/ZamaButtons.swift,
-				ZamaUI/ZamaConfig.swift,
-				ZamaUI/ZamaLink.swift,
+				LuxUI/CustomFont/CustomFont.swift,
+				"LuxUI/CustomFont/Telegraf-Bold.ttf",
+				"LuxUI/CustomFont/Telegraf-Regular.ttf",
+				"LuxUI/CustomFont/Telegraf-UltraBold.ttf",
+				LuxUI/SharedAssets.xcassets,
+				LuxUI/LuxButtons.swift,
+				LuxUI/LuxConfig.swift,
+				LuxUI/LuxLink.swift,
 			);
 			target = 32C9CC1F2CA565A100AEDA32 /* Health */;
 		};
@@ -141,16 +141,16 @@
 				"Helpers-TFHE/Keys/ClientKey.swift",
 				"Helpers-TFHE/Keys/PublicKeyCompact.swift",
 				"Helpers-TFHE/Keys/ServerKeyCompressed.swift",
-				"Helpers-Zama/Files/Persistable.swift",
-				"Helpers-Zama/Files/Storage.swift",
-				"Helpers-Zama/SleepModels.swift",
+				"Helpers-Lux/Files/Persistable.swift",
+				"Helpers-Lux/Files/Storage.swift",
+				"Helpers-Lux/SleepModels.swift",
 				"Reusable/Data+snippet.swift",
 				Reusable/PrettyTypeNamable.swift,
-				ZamaUI/CustomFont/CustomFont.swift,
-				"ZamaUI/CustomFont/Telegraf-Bold.ttf",
-				"ZamaUI/CustomFont/Telegraf-Regular.ttf",
-				"ZamaUI/CustomFont/Telegraf-UltraBold.ttf",
-				ZamaUI/SharedAssets.xcassets,
+				LuxUI/CustomFont/CustomFont.swift,
+				"LuxUI/CustomFont/Telegraf-Bold.ttf",
+				"LuxUI/CustomFont/Telegraf-Regular.ttf",
+				"LuxUI/CustomFont/Telegraf-UltraBold.ttf",
+				LuxUI/SharedAssets.xcassets,
 			);
 			target = 324F8E1C2CA43B2100F0BB11 /* QLHealthExtension */;
 		};
@@ -171,12 +171,12 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"Helpers-TorusML/TorusML.swift",
-				"Helpers-Zama/Files/Storage.swift",
+				"Helpers-Lux/Files/Storage.swift",
 				"Reusable/Data+snippet.swift",
-				ZamaUI/CustomFont/CustomFont.swift,
-				"ZamaUI/CustomFont/Telegraf-Bold.ttf",
-				"ZamaUI/CustomFont/Telegraf-Regular.ttf",
-				"ZamaUI/CustomFont/Telegraf-UltraBold.ttf",
+				LuxUI/CustomFont/CustomFont.swift,
+				"LuxUI/CustomFont/Telegraf-Bold.ttf",
+				"LuxUI/CustomFont/Telegraf-Regular.ttf",
+				"LuxUI/CustomFont/Telegraf-UltraBold.ttf",
 			);
 			target = 322658942D6E20AD004BB59A /* QLAdsExtension */;
 		};
@@ -197,9 +197,9 @@
 		328F5CC62D00A1AA00D7B219 /* Exceptions for "Shared" folder in "Ads" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"Helpers-Zama/Files/Persistable.swift",
-				"Helpers-Zama/Files/Storage.swift",
-				"Helpers-Zama/Network.swift",
+				"Helpers-Lux/Files/Persistable.swift",
+				"Helpers-Lux/Files/Storage.swift",
+				"Helpers-Lux/Network.swift",
 				Reusable/AsyncButton.swift,
 				"Reusable/Data+hash.swift",
 				"Reusable/Data+snippet.swift",
@@ -207,14 +207,14 @@
 				Reusable/OnAppearAgain.swift,
 				Reusable/OpenAppButton.swift,
 				Reusable/UserDefaultsStorage.swift,
-				ZamaUI/CustomFont/CustomFont.swift,
-				"ZamaUI/CustomFont/Telegraf-Bold.ttf",
-				"ZamaUI/CustomFont/Telegraf-Regular.ttf",
-				"ZamaUI/CustomFont/Telegraf-UltraBold.ttf",
-				ZamaUI/SharedAssets.xcassets,
-				ZamaUI/ZamaButtons.swift,
-				ZamaUI/ZamaConfig.swift,
-				ZamaUI/ZamaLink.swift,
+				LuxUI/CustomFont/CustomFont.swift,
+				"LuxUI/CustomFont/Telegraf-Bold.ttf",
+				"LuxUI/CustomFont/Telegraf-Regular.ttf",
+				"LuxUI/CustomFont/Telegraf-UltraBold.ttf",
+				LuxUI/SharedAssets.xcassets,
+				LuxUI/LuxButtons.swift,
+				LuxUI/LuxConfig.swift,
+				LuxUI/LuxLink.swift,
 			);
 			target = 328F5CB22D009CA800D7B219 /* Ads */;
 		};
@@ -379,7 +379,7 @@
 		32B258382C98693800538B23 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				32B258372C98693800538B23 /* ZAMA Data Vault.app */,
+				32B258372C98693800538B23 /* Lux Data Vault.app */,
 				324F8E1D2CA43B2100F0BB11 /* QLHealthExtension.appex */,
 				32C9CC202CA565A100AEDA32 /* FHE Health.app */,
 				328F5CB32D009CA800D7B219 /* FHE Ads.app */,
@@ -477,7 +477,7 @@
 				322E72BA2CC9A636009B2530 /* Algorithms */,
 			);
 			productName = FHEDemo;
-			productReference = 32B258372C98693800538B23 /* ZAMA Data Vault.app */;
+			productReference = 32B258372C98693800538B23 /* Lux Data Vault.app */;
 			productType = "com.apple.product-type.application";
 		};
 		32C9CC1F2CA565A100AEDA32 /* Health */ = {
@@ -511,7 +511,7 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1630;
-				ORGANIZATIONNAME = Zama;
+				ORGANIZATIONNAME = Lux;
 				TargetAttributes = {
 					322658942D6E20AD004BB59A = {
 						CreatedOnToolsVersion = 16.2;
@@ -656,14 +656,14 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QLAdsExtension/AppSupport/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "$(TARGET_NAME)";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 Zama. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 Lux. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ai.zama.fhedemo.datavault.adsQuickLookExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.luxfhe.fhedemo.datavault.adsQuickLookExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -680,14 +680,14 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QLAdsExtension/AppSupport/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "$(TARGET_NAME)";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 Zama. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 Lux. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ai.zama.fhedemo.datavault.adsQuickLookExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.luxfhe.fhedemo.datavault.adsQuickLookExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -704,14 +704,14 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QLHealthExtension/AppSupport/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "$(TARGET_NAME)";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 Zama. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 Lux. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ai.zama.fhedemo.datavault.quickLookExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.luxfhe.fhedemo.datavault.quickLookExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -728,14 +728,14 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QLHealthExtension/AppSupport/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "$(TARGET_NAME)";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 Zama. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 Lux. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ai.zama.fhedemo.datavault.quickLookExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.luxfhe.fhedemo.datavault.quickLookExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -767,7 +767,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ai.zama.fhedemo.adsTargeting;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.luxfhe.fhedemo.adsTargeting;
 				PRODUCT_NAME = "FHE Ads";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -798,7 +798,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ai.zama.fhedemo.adsTargeting;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.luxfhe.fhedemo.adsTargeting;
 				PRODUCT_NAME = "FHE Ads";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -955,8 +955,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ai.zama.fhedemo.datavault;
-				PRODUCT_NAME = "ZAMA Data Vault";
+				PRODUCT_BUNDLE_IDENTIFIER = ai.luxfhe.fhedemo.datavault;
+				PRODUCT_NAME = "Lux Data Vault";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -987,8 +987,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ai.zama.fhedemo.datavault;
-				PRODUCT_NAME = "ZAMA Data Vault";
+				PRODUCT_BUNDLE_IDENTIFIER = ai.luxfhe.fhedemo.datavault;
+				PRODUCT_NAME = "Lux Data Vault";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1017,7 +1017,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ai.zama.fhedemo.health;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.luxfhe.fhedemo.health;
 				PRODUCT_NAME = "FHE Health";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1047,7 +1047,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ai.zama.fhedemo.health;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.luxfhe.fhedemo.health;
 				PRODUCT_NAME = "FHE Health";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -22,7 +22,7 @@
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIColorName</key>
-		<string>zamaGreyBackground</string>
+		<string>luxGreyBackground</string>
 	</dict>
 </dict>
 </plist>

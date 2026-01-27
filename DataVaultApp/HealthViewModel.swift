@@ -1,4 +1,4 @@
-// Copyright © 2025 Zama. All rights reserved.
+// Copyright © 2025 Lux. All rights reserved.
 
 import HealthKit
 import Algorithms
@@ -269,7 +269,7 @@ final class HealthViewModel: ObservableObject {
 
         if shouldLog {
             let nightLogged = String(describing: night)
-                .replacingOccurrences(of: "ZAMA_Data_Vault.Sleep.", with: "")
+                .replacingOccurrences(of: "LUX_Data_Vault.Sleep.", with: "")
         
             localLogOutput += "Encrypting night for \(night.date.formatted(date: .numeric, time: .omitted))…\n\n"
             localLogOutput += "\(nightLogged)\n\n"

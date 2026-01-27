@@ -1,4 +1,4 @@
-// Copyright © 2025 Zama. All rights reserved.
+// Copyright © 2025 Lux. All rights reserved.
 
 import SwiftUI
 
@@ -6,45 +6,45 @@ import SwiftUI
     VStack {
         Button("Foo") {}.buttonStyle(.bordered)
         Button("Foo") {}.buttonStyle(.borderedProminent)
-        
-        Button("Foo") {}.buttonStyle(.zama)
-        Button("Foo") {}.buttonStyle(.zama).disabled(true)
-        
-        Button("Foo") {}.buttonStyle(.zamaSecondary)
-        Button("Foo") {}.buttonStyle(.zamaSecondary).disabled(true)
-        
+
+        Button("Foo") {}.buttonStyle(.lux)
+        Button("Foo") {}.buttonStyle(.lux).disabled(true)
+
+        Button("Foo") {}.buttonStyle(.luxSecondary)
+        Button("Foo") {}.buttonStyle(.luxSecondary).disabled(true)
+
         Button("Foo") {}.buttonStyle(.blackHighlight())
         Button("Foo") {}.buttonStyle(.blackHighlight()).disabled(true)
-        
+
         AsyncButton(action: {}) {
             Label("Import Health Information", systemImage: "heart.text.clipboard")
-        }.buttonStyle(.zama)
-        
+        }.buttonStyle(.lux)
+
         Spacer()
     }
     .padding()
     .background(Color.white)
 }
 
-struct ZamaButtonStyle: ButtonStyle {
+struct LuxButtonStyle: ButtonStyle {
     @Environment(\.isEnabled) private var isEnabled
-    
+
     func makeBody(configuration config: Configuration) -> some View {
         config.label
             .opacity(isEnabled ? 1 : 0.5)
             .padding(12)
             .frame(maxWidth: .infinity)
             .fontWeight(.bold)
-            .background(.zamaYellow.opacity(isEnabled ? 1 : 0.2))
+            .background(.luxYellow.opacity(isEnabled ? 1 : 0.2))
             .border(config.isPressed ? .black : .clear, width: 1)
             .animation(.none, value: config.isPressed)
             .tint(.black)
     }
 }
 
-struct ZamaSecondaryButtonStyle: ButtonStyle {
+struct LuxSecondaryButtonStyle: ButtonStyle {
     @Environment(\.isEnabled) private var isEnabled
-    
+
     func makeBody(configuration config: Configuration) -> some View {
         config.label
             .opacity(isEnabled ? 1 : 0.3)
@@ -63,7 +63,7 @@ struct ZamaSecondaryButtonStyle: ButtonStyle {
 struct BlackHighlightButtonStyle: ButtonStyle {
     var disabled: Bool
     @Environment(\.isEnabled) private var isEnabled
-    
+
     func makeBody(configuration config: Configuration) -> some View {
         if disabled {
             config.label
@@ -77,15 +77,15 @@ struct BlackHighlightButtonStyle: ButtonStyle {
 }
 
 
-extension ButtonStyle where Self == ZamaButtonStyle {
-    static var zama: ZamaButtonStyle {
-        ZamaButtonStyle()
+extension ButtonStyle where Self == LuxButtonStyle {
+    static var lux: LuxButtonStyle {
+        LuxButtonStyle()
     }
-    
-    static var zamaSecondary: ZamaSecondaryButtonStyle {
-        ZamaSecondaryButtonStyle()
+
+    static var luxSecondary: LuxSecondaryButtonStyle {
+        LuxSecondaryButtonStyle()
     }
-    
+
     static func blackHighlight(disabled: Bool = false) -> BlackHighlightButtonStyle {
         BlackHighlightButtonStyle(disabled: disabled)
     }

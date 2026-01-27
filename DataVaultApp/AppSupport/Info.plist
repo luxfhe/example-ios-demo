@@ -7,7 +7,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>zamadatavault</string>
+				<string>luxdatavault</string>
 			</array>
 		</dict>
 	</array>
@@ -15,8 +15,8 @@
 	<false/>
 	<key>QLSupportedContentTypes</key>
 	<array>
-		<string>com.zama.fhe.encrypted</string>
-		<string>com.zama.fhe.encryptedAd</string>
+		<string>com.luxfhe.fhe.encrypted</string>
+		<string>com.luxfhe.fhe.encryptedAd</string>
 	</array>
 	<key>UIAppFonts</key>
 	<array>
@@ -32,9 +32,9 @@
 				<string>public.data</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Zama FHE Encrypted File Type</string>
+			<string>Lux FHE Encrypted File Type</string>
 			<key>UTTypeIdentifier</key>
-			<string>com.zama.fhe.encrypted</string>
+			<string>com.luxfhe.fhe.encrypted</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
@@ -51,9 +51,9 @@
 				<string>public.data</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Zama FHE Encrypted Ad</string>
+			<string>Lux FHE Encrypted Ad</string>
 			<key>UTTypeIdentifier</key>
-			<string>com.zama.fhe.encryptedAd</string>
+			<string>com.luxfhe.fhe.encryptedAd</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>

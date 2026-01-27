@@ -1,15 +1,15 @@
-// Copyright © 2025 Zama. All rights reserved.
+// Copyright © 2025 Lux. All rights reserved.
 
 import SwiftUI
 
 #Preview {
-    ZamaLink()
+    LuxLink()
 }
 
-struct ZamaLink: View {
+struct LuxLink: View {
     var body: some View {
-        Link(destination: ZamaConfig.websiteLandingPage) {
-            Image(.logoZamaZblack)
+        Link(destination: LuxConfig.websiteLandingPage) {
+            Image(.logoLuxZblack)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 32, height: 32)

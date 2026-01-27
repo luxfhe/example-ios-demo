@@ -1,4 +1,4 @@
-// Copyright © 2025 Zama. All rights reserved.
+// Copyright © 2025 Lux. All rights reserved.
 
 import SwiftUI
 
@@ -31,7 +31,7 @@ struct ProfileTab: View {
             .scrollBounceBehavior(.basedOnSize)
         }
         .customFont(.body)
-        .buttonStyle(.zama)
+        .buttonStyle(.lux)
         .onChange(of: vm.age, vm.validateProfile)
         .onChange(of: vm.gender, vm.validateProfile)
         .onChange(of: vm.country, vm.validateProfile)
@@ -69,7 +69,7 @@ struct ProfileTab: View {
                     .keyboardType(.numberPad)
                     .textFieldStyle(.plain)
                     .padding(8)
-                    .background(Color.zamaGreyBackground)
+                    .background(Color.luxGreyBackground)
             }
             
             LabeledContent("Gender:") {
@@ -87,7 +87,7 @@ struct ProfileTab: View {
                         Button("\(item.flag) \(item.localizedCountryName)") { vm.country = item }
                     }
                 } label: {
-                    Color.zamaGreyBackground
+                    Color.luxGreyBackground
                         .frame(maxWidth: .infinity, minHeight: 40, alignment: .leading)
                         .overlay(alignment: .leading) {
                             if let country = vm.country {
@@ -107,7 +107,7 @@ struct ProfileTab: View {
                         Button("\(item.names.native) (\(item.names.translated))") { vm.language = item }
                     }
                 } label: {
-                    Color.zamaGreyBackground
+                    Color.luxGreyBackground
                         .frame(maxWidth: .infinity, minHeight: 40, alignment: .leading)
                         .overlay(alignment: .leading) {
                             if let language = vm.language {
@@ -171,7 +171,7 @@ struct ProfileTab: View {
             AsyncButton("Refresh Torus ML Keys") {
                 await vm.refreshTorusMLKeys()
             }
-            .buttonStyle(.zama)
+            .buttonStyle(.lux)
 
             Text("If a FHE friendly app (like FHE Ads) reports issues, use this to ensure your local FHE keys (PrivateKey, PublicKey) are correctly generated and saved.")
                 .customFont(.caption)
@@ -309,7 +309,7 @@ extension ProfileTab {
             }
             
             let profileLogged = String(describing: completedProfile)
-                .replacingOccurrences(of: "ZAMA_Data_Vault.", with: "")
+                .replacingOccurrences(of: "LUX_Data_Vault.", with: "")
                 .replacingOccurrences(of: "Interests.", with: "")
                 .replacingOccurrences(of: ", ", with: ",\n  ")
             

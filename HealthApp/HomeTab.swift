@@ -1,4 +1,4 @@
-// Copyright © 2025 Zama. All rights reserved.
+// Copyright © 2025 Lux. All rights reserved.
 
 import SwiftUI
 
@@ -30,7 +30,7 @@ struct HomeTab: View {
                                 Text("\(sleepDate.formatted(date: .numeric, time: .omitted))")
                                     .customFont(.body)
                                     .bold()
-                                    .foregroundStyle(Color.zamaYellow)
+                                    .foregroundStyle(Color.luxYellow)
                             }
                             
                             if let sleepInput {
@@ -55,7 +55,7 @@ struct HomeTab: View {
                                 Text("\(weightInterval.start.formatted(date: .numeric, time: .omitted)) - \(weightInterval.end.formatted(date: .numeric, time: .omitted))")
                                     .customFont(.body)
                                     .bold()
-                                    .foregroundStyle(Color.zamaYellow)
+                                    .foregroundStyle(Color.luxYellow)
                             }
                             
                             if let weightMin {
@@ -97,7 +97,7 @@ struct HomeTab: View {
             .font(.custom("Telegraf-Bold", size: 22))
             .padding()
             .navigationTitle("Health Report")
-            .background(Color.zamaYellowLight)
+            .background(Color.luxYellowLight)
         }.onAppearAgain {
             Task {
                 // Hack to force QL Preview to reload…
