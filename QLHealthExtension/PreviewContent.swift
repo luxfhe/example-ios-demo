@@ -1,4 +1,4 @@
-// Copyright © 2025 Zama. All rights reserved.
+// Copyright © 2025 Lux. All rights reserved.
 
 import SwiftUI
 import Charts
@@ -77,7 +77,7 @@ struct PreviewContent: View {
     }
     
     private func text(value: Double)  -> some View {
-        Color.zamaYellow
+        Color.luxYellow
             .aspectRatio(contentMode: .fit)
             .overlay {
                 Text("\(value.formatted(.number.precision(.fractionLength(1))))")

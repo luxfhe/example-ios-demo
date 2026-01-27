@@ -58,7 +58,7 @@ if [ "$USE_TLS" = "true" ]; then
         -d "$DOMAIN_NAME" \
         --cert-name "$DOMAIN_NAME"
 
-    ls -altr /etc/letsencrypt/live/api.zama.ai/
+    ls -altr /etc/letsencrypt/live/api.lux.network/
     mkdir -p $HOST_CERTS_PATH
     cp $CERT_NAME/$CERT_FILE_NAME $HOST_CERTS_PATH/$CERT_FILE_NAME
     cp $CERT_NAME/$PRIVKEY_FILE_NAME $HOST_CERTS_PATH/$PRIVKEY_FILE_NAME

@@ -1,4 +1,4 @@
-// Copyright © 2025 Zama. All rights reserved.
+// Copyright © 2025 Lux. All rights reserved.
 
 import SwiftUI
 
@@ -53,13 +53,13 @@ struct SleepTab: View {
                                     isSecondEncryptionInSession = true
                                     try await vm.generateFakeNights()
                                 })
-                                    .buttonStyle(.zamaSecondary)
+                                    .buttonStyle(.luxSecondary)
                             } else {
                                 AsyncButton("Refresh Encrypted Data", action: {
                                     isSecondEncryptionInSession = true
                                     try await vm.requestSleepPermission()
                                 })
-                                    .buttonStyle(.zamaSecondary)
+                                    .buttonStyle(.luxSecondary)
                             }
                         }
                     }
@@ -79,7 +79,7 @@ struct SleepTab: View {
                         AsyncButton("Refresh FHE Keys") {
                              await vm.refreshFHEServerKey()
                         }
-                        .buttonStyle(.zamaSecondary)
+                        .buttonStyle(.luxSecondary)
 
                         Text("If a FHE friendly app (like FHE Health) reports issues, use this to ensure your local FHE keys (Client, Server, Public) are correctly generated and saved.")
                             .customFont(.caption)
@@ -107,7 +107,7 @@ struct SleepTab: View {
             .scrollBounceBehavior(.basedOnSize)
         }
         .customFont(.body)
-        .buttonStyle(.zama)
+        .buttonStyle(.lux)
         .onAppearAgain {
             Task {
                 try await vm.loadFromDisk()

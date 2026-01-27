@@ -4,7 +4,7 @@
 ## AD TARGETING  #
 ##################
 curl \
-  -X POST "https://api.zama.ai/add_key" \
+  -X POST "https://api.lux.network/add_key" \
   -F "task_name=ad_targeting" \
   -F "key=@concreteCPUCompressionKey"
 
@@ -13,7 +13,7 @@ curl \
 # }
 
 curl \
-  -X POST "https://api.zama.ai/start_task" \
+  -X POST "https://api.lux.network/start_task" \
   -F "task_name=ad_targeting" \
   -F "uid=906ead1d-1618-4f00-abbb-2850d6c0e3a9" \
   -F "encrypted_input=@concreteProfile.fheencrypted"
@@ -23,7 +23,7 @@ curl \
 # }
 
 curl \
-  -X GET "https://api.zama.ai/get_task_status" \
+  -X GET "https://api.lux.network/get_task_status" \
   -F "task_name=ad_targeting" \
   -F "task_id=51e63bae-c44c-4c53-82ea-0c7fb47400cf" \
   -F "uid=906ead1d-1618-4f00-abbb-2850d6c0e3a9"
@@ -37,14 +37,14 @@ curl \
 # }
 
 curl \
-  -X GET "https://api.zama.ai/get_task_result" \
+  -X GET "https://api.lux.network/get_task_result" \
     -G \
     --data-urlencode "task_name=ad_targeting" \
     --data-urlencode "task_id=51e63bae-c44c-4c53-82ea-0c7fb47400cf" \
     --data-urlencode "uid=906ead1d-1618-4f00-abbb-2850d6c0e3a9"
 
 curl \
-  -X GET "https://api.zama.ai/get_task_result?task_name=ad_targeting&task_id=51e63bae-c44c-4c53-82ea-0c7fb47400cf&uid=906ead1d-1618-4f00-abbb-2850d6c0e3a9"
+  -X GET "https://api.lux.network/get_task_result?task_name=ad_targeting&task_id=51e63bae-c44c-4c53-82ea-0c7fb47400cf&uid=906ead1d-1618-4f00-abbb-2850d6c0e3a9"
 
 
 ################
@@ -53,7 +53,7 @@ curl \
 
 # Stats using the received UID
 # curl \
-#   -X POST https://api.zama.ai/sleep_quality \
+#   -X POST https://api.lux.network/sleep_quality \
 #   -F "uid=$EXTRACTED_UID" \
 #   -F "input=@client_files/sleepList.fheencrypted" \
 #   -o client_files/sleep_quality_output.fheencrypted
@@ -61,7 +61,7 @@ curl \
 # Start
 #######
 curl \
-  -X POST "https://api.zama.ai/start_task" \
+  -X POST "https://api.lux.network/start_task" \
   -F "task_name=weight_stats" \
   -F "uid=5c8bb483-6e60-49bd-bb0c-09eb9cf40ca9" \
   -F "encrypted_input=@weightList.fheencrypted"
@@ -74,7 +74,7 @@ curl \
 # GET status
 ############
 curl \
-  -X GET "https://api.zama.ai/get_task_status" \
+  -X GET "https://api.lux.network/get_task_status" \
   -F "task_name=weight_stats" \
   -F "task_id=6a45a60b-99f9-4370-a7d3-89712cf8623a" \
   -F "uid=5c8bb483-6e60-49bd-bb0c-09eb9cf40ca9"
@@ -89,11 +89,11 @@ curl \
 # GET result
 ############
 curl \
-  -X GET "https://api.zama.ai/get_task_result?task_name=weight_stats&task_id=8b458da4-1307-42fb-850a-b32c12a1feca&uid=5c8bb483-6e60-49bd-bb0c-09eb9cf40ca9" \
+  -X GET "https://api.lux.network/get_task_result?task_name=weight_stats&task_id=8b458da4-1307-42fb-850a-b32c12a1feca&uid=5c8bb483-6e60-49bd-bb0c-09eb9cf40ca9" \
   -o output.json
 
 curl \
-  -X GET "https://api.zama.ai/get_task_result" \
+  -X GET "https://api.lux.network/get_task_result" \
     -G \
     --data-urlencode "task_name=weight_stats" \
     --data-urlencode "task_id=6a45a60b-99f9-4370-a7d3-89712cf8623a" \

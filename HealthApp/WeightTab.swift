@@ -1,4 +1,4 @@
-// Copyright © 2025 Zama. All rights reserved.
+// Copyright © 2025 Lux. All rights reserved.
 
 import SwiftUI
 
@@ -16,7 +16,7 @@ struct WeightTab: View {
                     Button("\(samples.interval.start.formatted(date: .numeric, time: .omitted)) - \(samples.interval.end.formatted(date: .numeric, time: .omitted))") {}
                         .allowsHitTesting(false)
                 } else {
-                    OpenAppButton(.zamaDataVault(tab: .weight))
+                    OpenAppButton(.luxDataVault(tab: .weight))
                 }
                 
                 CustomBox("Trend") {
@@ -49,8 +49,8 @@ struct WeightTab: View {
             }
             .padding()
             .navigationTitleView("Weight Analysis", icon: "scalemass.fill")
-            .buttonStyle(.zama)
-            .background(Color.zamaYellowLight)
+            .buttonStyle(.lux)
+            .background(Color.luxYellowLight)
             .onAppearAgain {
                 vm.refreshFromDisk()
             }

@@ -1,4 +1,4 @@
-// Copyright © 2025 Zama. All rights reserved.
+// Copyright © 2025 Lux. All rights reserved.
 
 import SwiftUI
 
@@ -29,7 +29,7 @@ struct ConsoleSection: View {
                     .fontDesign(.monospaced)
                     .padding(8)
                     .frame(minHeight: 200, alignment: .topLeading)
-                    .background(Color.zamaGreyConsole)
+                    .background(Color.luxGreyConsole)
                     .tint(.black)
             }
         }

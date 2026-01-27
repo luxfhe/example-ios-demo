@@ -1,4 +1,4 @@
-// Copyright © 2025 Zama. All rights reserved.
+// Copyright © 2025 Lux. All rights reserved.
 
 import SwiftUI
 
@@ -22,8 +22,8 @@ struct SocialTimeline: View {
                         .customFont(.title3)
                         .multilineTextAlignment(.center)
                     
-                    OpenAppButton(.zamaDataVault(tab: .profile))
-                        .buttonStyle(.zama)
+                    OpenAppButton(.luxDataVault(tab: .profile))
+                        .buttonStyle(.lux)
                         .padding(.horizontal, 20)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -43,10 +43,10 @@ struct SocialTimeline: View {
                 }
             }
         }
-        .background(Color.zamaGreyBackground)
+        .background(Color.luxGreyBackground)
         .overlay(alignment: .topTrailing) {
             if !vm.dataVaultActionNeeded {
-                ZamaLink()
+                LuxLink()
             }
         }
         .onAppearAgain {
@@ -61,7 +61,7 @@ struct SocialTimeline: View {
                 .frame(maxWidth: .infinity)
                 .overlay(alignment: .leading) {
                     if !vm.dataVaultActionNeeded {
-                        OpenAppButton(.zamaDataVault(tab: .profile)) {
+                        OpenAppButton(.luxDataVault(tab: .profile)) {
                             Image(systemName: "pencil.circle.fill")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)

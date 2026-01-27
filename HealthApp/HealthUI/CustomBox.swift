@@ -1,4 +1,4 @@
-// Copyright © 2025 Zama. All rights reserved.
+// Copyright © 2025 Lux. All rights reserved.
 
 import SwiftUI
 
@@ -22,7 +22,7 @@ import SwiftUI
         Spacer()
     }
     .padding()
-    .background(Color.zamaYellow)
+    .background(Color.luxYellow)
 }
 
 struct CustomBox<Label: View, Content: View>: View {

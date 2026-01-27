@@ -11,8 +11,8 @@ import CoreImage
  ✅ Removes metadata from all JPEG images to reduce file size.
  */
 
-let folderPath = "/Users/dim/Developer/Zama/deai-dot-products/TestConcretMLX/images"
-let textFilePath = "/Users/dim/Developer/Zama/deai-dot-products/TestConcretMLX/ads.json"
+let folderPath = "/Users/dim/Developer/Lux/deai-dot-products/TestConcretMLX/images"
+let textFilePath = "/Users/dim/Developer/Lux/deai-dot-products/TestConcretMLX/ads.json"
 
 /// Calcule le hash SHA1 d'un fichier
 func sha1Hash(of fileURL: URL) -> String? {

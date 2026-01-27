@@ -1,23 +1,23 @@
-// Copyright © 2025 Zama. All rights reserved.
+// Copyright © 2025 Lux. All rights reserved.
 
 import SwiftUI
 
 #Preview {
-    ZamaInfoButton()
+    LuxInfoButton()
     Spacer()
 }
 
-struct ZamaInfoButton: View {
+struct LuxInfoButton: View {
     @State private var isPresented: Bool = false
-    
+
     private var infoText: String = {
         """
-        The information on this page is visible only by you and the 'Data Vault' app which stores your sensitive data. 
-        
+        The information on this page is visible only by you and the 'Data Vault' app which stores your sensitive data.
+
         The '\(AppInfo.appName)' app does not have access to this data.
         """
     }()
-    
+
     var body: some View {
         Button(action: {
             isPresented = true
@@ -31,7 +31,7 @@ struct ZamaInfoButton: View {
             content
         }
     }
-    
+
     private var content: some View {
         NavigationStack {
             VStack {
@@ -42,7 +42,7 @@ struct ZamaInfoButton: View {
                         Color.black.opacity(0.7)
                     }
                     .presentationBackground(.ultraThinMaterial)
-                
+
                 Button("OK") {
                     isPresented = false
                 }.buttonStyle(.bordered)
@@ -60,6 +60,6 @@ struct ZamaInfoButton: View {
         }
         .environment(\.colorScheme, .dark)
         .customFont(.body)
-        .tint(.zamaOrange)
+        .tint(.luxOrange)
     }
 }

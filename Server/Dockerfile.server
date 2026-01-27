@@ -16,7 +16,7 @@ RUN ./build_tasks.sh
 # ===========================
 # Stage 2: Final image
 # ===========================
-FROM nvidia/cuda:12.8.1-runtime-rockylinux9 AS zama-ios-apps
+FROM nvidia/cuda:12.8.1-runtime-rockylinux9 AS lux-ios-apps
 
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
@@ -44,7 +44,7 @@ RUN pip3 install --no-cache-dir -r server_requirements.txt
 # ===========================
 # Stage 3: Final image
 # ===========================
-FROM zama-ios-apps
+FROM lux-ios-apps
 
 # Copy Rust binaries from the rust-builder stage
 COPY --from=rust-builder /build/bin/* ./

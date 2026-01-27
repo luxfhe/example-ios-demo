@@ -1,4 +1,4 @@
-// Copyright © 2025 Zama. All rights reserved.
+// Copyright © 2025 Lux. All rights reserved.
 
 import Foundation
 
@@ -7,18 +7,18 @@ final class Network {
         let status: String
         let details: String?
     }
-    
+
     enum ServerTask: String {
         case weight_stats, sleep_quality, ad_targeting
     }
-    
+
     typealias UID = String
     typealias TaskID = String
-    
+
     static let shared = Network()
     private init() {}
-    
-    private let rootURL = ZamaConfig.rootAPI
+
+    private let rootURL = LuxConfig.rootAPI
     
     /// - Returns: uid of the server key, for server caching purposes. No need to re-upload it every time, since it is somewhat heavy (about 27 MB).
     func uploadServerKey(_ sk: Data, for task: ServerTask) async throws -> UID {

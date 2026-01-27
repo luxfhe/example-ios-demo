@@ -6,9 +6,9 @@
 	<true/>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.ai.zama.fhedemo.healthPrivate</string>
-		<string>group.ai.zama.fhedemo.shared</string>
-		<string>group.ai.zama.fhedemo.adsPrivate</string>
+		<string>group.ai.luxfhe.fhedemo.healthPrivate</string>
+		<string>group.ai.luxfhe.fhedemo.shared</string>
+		<string>group.ai.luxfhe.fhedemo.adsPrivate</string>
 	</array>
 </dict>
 </plist>

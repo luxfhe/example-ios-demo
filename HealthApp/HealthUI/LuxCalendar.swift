@@ -1,3 +1,4 @@
+// Copyright © 2025 Lux. All rights reserved.
 
 import SwiftUI
 
@@ -6,28 +7,28 @@ import SwiftUI
     let calendar = Calendar.current
     let currentYear: DateInterval = calendar.dateInterval(of: .year, for: Date())!
     let samples: [Date] = calendar.generateDates(in: currentYear, matching: DateComponents(day: 5))
-    
+
     VStack {
         DatePicker("Selection:",
                    selection: .init(get: { selection ?? Date.now }, set: { selection = $0 }),
                    in: currentYear.start...currentYear.end,
                    displayedComponents: .date)
-        
-        ZamaCalendar(covering: currentYear,
+
+        LuxCalendar(covering: currentYear,
                      selection: $selection,
                      canSelect: { samples.contains($0) })
     }
     .padding()
 }
 
-struct ZamaCalendar: View {
+struct LuxCalendar: View {
     @Environment(\.calendar) private var calendar
     @Environment(\.locale) private var locale
-    
+
     @Binding private var selection: Date?
     private let canSelect: (Date) -> Bool
     private let interval: DateInterval
-    
+
     init(covering interval: DateInterval,
          selection: Binding<Date?>,
          canSelect: @escaping (Date) -> Bool
@@ -36,7 +37,7 @@ struct ZamaCalendar: View {
         self._selection = selection
         self.canSelect = canSelect
     }
-    
+
     var body: some View {
         CalendarView(covering: interval,
                      selection: $selection,
@@ -45,7 +46,7 @@ struct ZamaCalendar: View {
                 .font(.caption)
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 10)
-                .background(Color.zamaYellow.opacity(selection == date ? 1 : 0))
+                .background(Color.luxYellow.opacity(selection == date ? 1 : 0))
                 .overlay(alignment: .bottom) {
                     if canSelect(date) {
                         Circle()
@@ -64,6 +65,6 @@ struct ZamaCalendar: View {
                 .font(.caption2)
                 .bold()
         }
-        .background(Color.zamaYellowLight.ignoresSafeArea())
+        .background(Color.luxYellowLight.ignoresSafeArea())
     }
 }

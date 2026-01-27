@@ -16,7 +16,7 @@
 			<false/>
 			<key>QLSupportedContentTypes</key>
 			<array>
-				<string>com.zama.fhe.encrypted</string>
+				<string>com.luxfhe.fhe.encrypted</string>
 			</array>
 			<key>QLSupportsSearchableItems</key>
 			<false/>
