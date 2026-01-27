@@ -54,7 +54,7 @@ final class PreviewVC: UIViewController, QLPreviewingController {
         let rawResult: [[UInt64]] = try decryptMatrix(compressedMatrix: compressedMatrix,
                                                       privateKey: privateKey,
                                                       cryptoParams: cryptoParams,
-                                                      numValidGlweValuesInLastCiphertext: 42) // Concrete ML hack
+                                                      numValidGlweValuesInLastCiphertext: 42) // Torus ML hack
         
         let clearResult: [Int64] = rawResult[0].compactMap {
             let raw = Int64(truncatingIfNeeded: $0)
