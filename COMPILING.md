@@ -12,21 +12,21 @@
     rustup target add aarch64-apple-ios aarch64-apple-ios-sim
 ```
 
-3. Install nightly Rust toolchain (a TFHE-rs requirement):
+3. Install nightly Rust toolchain (a Lux FHE requirement):
 ```shell
 rustup toolchain install nightly
 ```
 
-4. Install Rust source so as to cross compile `std` lib (a TFHE-rs requirement):
+4. Install Rust source so as to cross compile `std` lib (a Lux FHE requirement):
 ```shell
 rustup component add rust-src --toolchain nightly-aarch64-apple-darwin
 ```
 
-## 2. Compile TFHE-rs for use in Swift
+## 2. Compile Lux FHE for use in Swift
 
-1. Get TFHE-rs:
+1. Get Lux FHE:
 ```shell
-git clone --branch https://github.com/luxfhe.io/tfhe-rs.git
+git clone --branch https://github.com/luxfhe.io/luxfhe.git
 ```
 
 2. Compile for both iOS and iOS simulator targets:

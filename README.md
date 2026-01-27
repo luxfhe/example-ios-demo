@@ -44,7 +44,7 @@ The following demo end-user applications are available:
 
 For these demo end-user applications, analysis and processing of the encrypted information is done on LuxFHE's servers. Server side functionality for these end-user applications is implemented in the [Server](Server/README.md) directory.
 
-The **Data Vault** uses [TFHE-rs](https://github.com/luxfhe-ai/tfhe-rs) and  [Concrete ML Extensions](https://github.com/luxfhe-ai/concrete-ml-extensions) to encrypt and decrypt data.
+The **Data Vault** uses [Lux FHE](https://github.com/luxfhe-ai/luxfhe) and  [Concrete ML Extensions](https://github.com/luxfhe-ai/concrete-ml-extensions) to encrypt and decrypt data.
 
 ## Setup
 
@@ -65,10 +65,10 @@ The easiest way to build all dependencies is to execute [the dedicated script](.
 To manually build the libraries follow the instructions in the [compilation guide](./COMPILING.md). The main steps are:
 
 1. [Install Rust](COMPILING.md#1-install-rust)
-1. [Compile TFHE-rs](COMPILING.md#2-compile-tfhe-rs-for-use-in-swift) 
+1. [Compile Lux FHE](COMPILING.md#2-compile-luxfhe-for-use-in-swift) 
 1. [Compile Concrete ML Extensions](COMPILING.md#3-compile-concrete-ml-extensions-for-use-in-swift)
 
-#### Using pre-built TFHE-rs libraries
+#### Using pre-built Lux FHE libraries
 
 Instead of building the `TFHE.xcframework` from scratch, you can use a previously built version. Simply save `TFHE.xcframework` in the root directory. Inside this framework, there should be:
 - `Info.plist`
