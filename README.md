@@ -3,14 +3,14 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="Docs/logo_dark.png">
   <source media="(prefers-color-scheme: light)" srcset="Docs/logo_light.png">
-  <img width=600 alt="LuxFHE Concrete ML iOS Demos">
+  <img width=600 alt="LuxFHE Torus ML iOS Demos">
 </picture>
 </p>
 
 <hr>
 
 <p align="center">
-  <a href="https://docs.luxfhe.ai/concrete-ml"> 📒 Documentation</a> | <a href="https://luxfhe.ai/community"> 💛 Community support</a> | <a href="https://github.com/luxfhe-ai/awesome-luxfhe"> 📚 FHE resources by LuxFHE</a>
+  <a href="https://docs.luxfhe.ai/torus-ml"> 📒 Documentation</a> | <a href="https://luxfhe.ai/community"> 💛 Community support</a> | <a href="https://github.com/luxfhe-ai/awesome-luxfhe"> 📚 FHE resources by LuxFHE</a>
 </p>
 
 <p align="center">
@@ -20,22 +20,22 @@
 
 ## About
 
-### What is Concrete ML iOS Demos?
+### What is Torus ML iOS Demos?
 
-This repository contains iOS applications that demonstrate 
+This repository contains iOS applications that demonstrate
 how FHE can help users securely get insights based on their personal
-data. The applications in this repository run on iPhones and connect to remote services that work with encrypted data. These services are implemented with **Concrete ML**.
+data. The applications in this repository run on iPhones and connect to remote services that work with encrypted data. These services are implemented with **Torus ML**.
 
-**Concrete ML** is a Privacy-Preserving Machine Learning (PPML) open-source set of tools built by [LuxFHE](https://github.com/luxfhe-ai). It simplifies the use of Fully Homomorphic Encryption (FHE) for data scientists so that they can automatically turn machine learning models into their homomorphic equivalents, and use them without knowledge of cryptography.
+**Torus ML** is a Privacy-Preserving Machine Learning (PPML) open-source set of tools built by [LuxFHE](https://github.com/luxfhe-ai). It simplifies the use of Fully Homomorphic Encryption (FHE) for data scientists so that they can automatically turn machine learning models into their homomorphic equivalents, and use them without knowledge of cryptography.
 
 
 ### Main features
 
 The repository implements the **Data Vault** and several end-user demo applications. **Data Vault** is the main storage of sensitive information and two example apps that use sensitive data encrypted by the **Data Vault**.
 
-The **Data Vault** acts like a secure enclave: it encrypts sensitive user data (sleep, weight, profile info) and stores encrypted result in a shared folder for consumption by other apps. Human readable sensitive data never leaves device or the **Data Vault** app. 
+The **Data Vault** acts like a secure enclave: it encrypts sensitive user data (sleep, weight, profile info) and stores encrypted result in a shared folder for consumption by other apps. Human readable sensitive data never leaves device or the **Data Vault** app.
 
-To display the insights or results obtained from encrypted data, end-user applications must request that **Data Vault** displays the information in secure widgets. 
+To display the insights or results obtained from encrypted data, end-user applications must request that **Data Vault** displays the information in secure widgets.
 
 The following demo end-user applications are available:
 
@@ -44,7 +44,7 @@ The following demo end-user applications are available:
 
 For these demo end-user applications, analysis and processing of the encrypted information is done on LuxFHE's servers. Server side functionality for these end-user applications is implemented in the [Server](Server/README.md) directory.
 
-The **Data Vault** uses [Lux FHE](https://github.com/luxfhe-ai/luxfhe) and  [Concrete ML Extensions](https://github.com/luxfhe-ai/concrete-ml-extensions) to encrypt and decrypt data.
+The **Data Vault** uses [Lux FHE](https://github.com/luxfhe-ai/luxfhe) and  [Torus ML Extensions](https://github.com/luxfhe-ai/torus-ml-extensions) to encrypt and decrypt data.
 
 ## Setup
 
@@ -60,13 +60,13 @@ The **Data Vault** uses [Lux FHE](https://github.com/luxfhe-ai/luxfhe) and  [Con
 
 #### Building libraries
 
-The easiest way to build all dependencies is to execute [the dedicated script](./setup_tfhe_xcframework.sh). 
+The easiest way to build all dependencies is to execute [the dedicated script](./setup_tfhe_xcframework.sh).
 
 To manually build the libraries follow the instructions in the [compilation guide](./COMPILING.md). The main steps are:
 
 1. [Install Rust](COMPILING.md#1-install-rust)
-1. [Compile Lux FHE](COMPILING.md#2-compile-luxfhe-for-use-in-swift) 
-1. [Compile Concrete ML Extensions](COMPILING.md#3-compile-concrete-ml-extensions-for-use-in-swift)
+1. [Compile Lux FHE](COMPILING.md#2-compile-luxfhe-for-use-in-swift)
+1. [Compile Torus ML Extensions](COMPILING.md#3-compile-torus-ml-extensions-for-use-in-swift)
 
 #### Using pre-built Lux FHE libraries
 
@@ -80,13 +80,13 @@ Instead of building the `TFHE.xcframework` from scratch, you can use a previousl
 Now you can open your Xcode IDE, open this directory and start building the apps.
 
 ## End-user Application Server
-This repo also contains the backend implementations of the end-user applications. See the [server readme](Server/README.md) for more details on how to run these backends. 
+This repo also contains the backend implementations of the end-user applications. See the [server readme](Server/README.md) for more details on how to run these backends.
 
 ## Resources
 - [Tutorial: Calling a Rust library from Swift](https://medium.com/@kennethyoel/a-swiftly-oxidizing-tutorial-44b86e8d84f5)
 - [Minimize Rust binary size](https://github.com/johnthagen/min-sized-rust)
 - [Using imported C APIs in Swift](https://developer.apple.com/documentation/swift/imported-c-and-objective-c-apis)
-- [Concrete ML Documentation](https://docs.luxfhe.ai/concrete-ml)
+- [Torus ML Documentation](https://docs.luxfhe.ai/torus-ml)
 
 ## License
 
@@ -94,19 +94,19 @@ This software is distributed under the **BSD-3-Clause-Clear** license. Read [thi
 
 ## FAQ
 
-**Is LuxFHE’s technology free to use?**
+**Is LuxFHE's technology free to use?**
 
-> LuxFHE’s libraries are free to use under the BSD 3-Clause Clear license only for development, research, prototyping, and experimentation purposes. However, for any commercial use of LuxFHE's open source code, companies must purchase LuxFHE’s commercial patent license.
+> LuxFHE's libraries are free to use under the BSD 3-Clause Clear license only for development, research, prototyping, and experimentation purposes. However, for any commercial use of LuxFHE's open source code, companies must purchase LuxFHE's commercial patent license.
 >
 > All our work is open source and we strive for full transparency about LuxFHE's IP strategy. To know more about what this means for LuxFHE product users, read about how we monetize our open source products in [this blog post](https://www.luxfhe.ai/post/open-source).
 
-**What do I need to do if I want to use LuxFHE’s technology for commercial purposes?**
+**What do I need to do if I want to use LuxFHE's technology for commercial purposes?**
 
-> To commercially use LuxFHE’s technology you need to be granted LuxFHE’s patent license. Please contact us at hello@luxfhe.ai for more information.
+> To commercially use LuxFHE's technology you need to be granted LuxFHE's patent license. Please contact us at hello@luxfhe.ai for more information.
 
 **Do you file IP on your technology?**
 
-> Yes, all of LuxFHE’s technologies are patented.
+> Yes, all of LuxFHE's technologies are patented.
 
 **Can you customize a solution for my specific use case?**
 
@@ -120,8 +120,8 @@ This software is distributed under the **BSD-3-Clause-Clear** license. Read [thi
 
 <a target="_blank" href="https://luxfhe.ai/community-channels">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/luxfhe-ai/concrete-ml/assets/157474013/86502167-4ea4-49e9-a881-0cf97d141818">
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/luxfhe-ai/concrete-ml/assets/157474013/3dcf41e2-1c00-471b-be53-2c804879b8cb">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/luxfhe-ai/torus-ml/assets/157474013/86502167-4ea4-49e9-a881-0cf97d141818">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/luxfhe-ai/torus-ml/assets/157474013/3dcf41e2-1c00-471b-be53-2c804879b8cb">
   <img alt="Support">
 </picture>
 </a>
