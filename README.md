@@ -10,12 +10,12 @@
 <hr>
 
 <p align="center">
-  <a href="https://docs.luxfhe.ai/torus-ml"> 📒 Documentation</a> | <a href="https://luxfhe.ai/community"> 💛 Community support</a> | <a href="https://github.com/luxfhe-ai/awesome-luxfhe"> 📚 FHE resources by LuxFHE</a>
+  <a href="https://docs.lux.network/torus-ml"> 📒 Documentation</a> | <a href="https://lux.fhe/community"> 💛 Community support</a> | <a href="https://github.com/luxfhe/luxfhe"> 📚 FHE resources by LuxFHE</a>
 </p>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-BSD--3--Clause--Clear-%23ffb243?style=flat-square"></a>
-  <a href="https://github.com/luxfhe-ai/bounty-program"><img src="https://img.shields.io/badge/Contribute-LuxFHE%20Bounty%20Program-%23ffd208?style=flat-square"></a>
+  <a href="https://github.com/luxfhe/bounty-program"><img src="https://img.shields.io/badge/Contribute-LuxFHE%20Bounty%20Program-%23ffd208?style=flat-square"></a>
 </p>
 
 ## About
@@ -26,7 +26,7 @@ This repository contains iOS applications that demonstrate
 how FHE can help users securely get insights based on their personal
 data. The applications in this repository run on iPhones and connect to remote services that work with encrypted data. These services are implemented with **Torus ML**.
 
-**Torus ML** is a Privacy-Preserving Machine Learning (PPML) open-source set of tools built by [LuxFHE](https://github.com/luxfhe-ai). It simplifies the use of Fully Homomorphic Encryption (FHE) for data scientists so that they can automatically turn machine learning models into their homomorphic equivalents, and use them without knowledge of cryptography.
+**Torus ML** is a Privacy-Preserving Machine Learning (PPML) open-source set of tools built by [LuxFHE](https://github.com/luxfhe). It simplifies the use of Fully Homomorphic Encryption (FHE) for data scientists so that they can automatically turn machine learning models into their homomorphic equivalents, and use them without knowledge of cryptography.
 
 
 ### Main features
@@ -44,7 +44,7 @@ The following demo end-user applications are available:
 
 For these demo end-user applications, analysis and processing of the encrypted information is done on LuxFHE's servers. Server side functionality for these end-user applications is implemented in the [Server](Server/README.md) directory.
 
-The **Data Vault** uses [Lux FHE](https://github.com/luxfhe-ai/luxfhe) and  [Torus ML Extensions](https://github.com/luxfhe-ai/torus-ml-extensions) to encrypt and decrypt data.
+The **Data Vault** uses [Lux FHE](https://github.com/luxfhe/luxfhe) and  [Torus ML Extensions](https://github.com/luxfhe/torus-ml-extensions) to encrypt and decrypt data.
 
 ## Setup
 
@@ -86,7 +86,7 @@ This repo also contains the backend implementations of the end-user applications
 - [Tutorial: Calling a Rust library from Swift](https://medium.com/@kennethyoel/a-swiftly-oxidizing-tutorial-44b86e8d84f5)
 - [Minimize Rust binary size](https://github.com/johnthagen/min-sized-rust)
 - [Using imported C APIs in Swift](https://developer.apple.com/documentation/swift/imported-c-and-objective-c-apis)
-- [Torus ML Documentation](https://docs.luxfhe.ai/torus-ml)
+- [Torus ML Documentation](https://docs.lux.network/torus-ml)
 
 ## License
 
@@ -98,11 +98,11 @@ This software is distributed under the **BSD-3-Clause-Clear** license. Read [thi
 
 > LuxFHE's libraries are free to use under the BSD 3-Clause Clear license only for development, research, prototyping, and experimentation purposes. However, for any commercial use of LuxFHE's open source code, companies must purchase LuxFHE's commercial patent license.
 >
-> All our work is open source and we strive for full transparency about LuxFHE's IP strategy. To know more about what this means for LuxFHE product users, read about how we monetize our open source products in [this blog post](https://www.luxfhe.ai/post/open-source).
+> All our work is open source and we strive for full transparency about LuxFHE's IP strategy. To know more about what this means for LuxFHE product users, read about how we monetize our open source products in [this blog post](https://www.lux.fhe/post/open-source).
 
 **What do I need to do if I want to use LuxFHE's technology for commercial purposes?**
 
-> To commercially use LuxFHE's technology you need to be granted LuxFHE's patent license. Please contact us at hello@luxfhe.ai for more information.
+> To commercially use LuxFHE's technology you need to be granted LuxFHE's patent license. Please contact us at hello@lux.fhe for more information.
 
 **Do you file IP on your technology?**
 
@@ -110,7 +110,7 @@ This software is distributed under the **BSD-3-Clause-Clear** license. Read [thi
 
 **Can you customize a solution for my specific use case?**
 
-> We are open to collaborating and advancing the FHE space with our partners. If you have specific needs, please email us at hello@luxfhe.ai.
+> We are open to collaborating and advancing the FHE space with our partners. If you have specific needs, please email us at hello@lux.fhe.
 
 <p align="right">
   <a href="#about" > ↑ Back to top </a>
@@ -118,10 +118,10 @@ This software is distributed under the **BSD-3-Clause-Clear** license. Read [thi
 
 ## Support
 
-<a target="_blank" href="https://luxfhe.ai/community-channels">
+<a target="_blank" href="https://lux.fhe/community-channels">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/luxfhe-ai/torus-ml/assets/157474013/86502167-4ea4-49e9-a881-0cf97d141818">
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/luxfhe-ai/torus-ml/assets/157474013/3dcf41e2-1c00-471b-be53-2c804879b8cb">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/luxfhe/torus-ml/assets/157474013/86502167-4ea4-49e9-a881-0cf97d141818">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/luxfhe/torus-ml/assets/157474013/3dcf41e2-1c00-471b-be53-2c804879b8cb">
   <img alt="Support">
 </picture>
 </a>
