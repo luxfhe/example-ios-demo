@@ -222,7 +222,7 @@ final class HealthViewModel: ObservableObject {
 
         var detailedEncryptionLogForFirstNight = ""
 
-        consoleLog += "Encrypting new fake sleep data using TFHE-rs...\n"
+        consoleLog += "Encrypting new fake sleep data using Lux-FHE...\n"
         for (index, data) in fakeNightsToGenerate.enumerated() {
             let shouldLogDetailsThisIteration = (index == 0)
             
@@ -273,7 +273,7 @@ final class HealthViewModel: ObservableObject {
         
             localLogOutput += "Encrypting night for \(night.date.formatted(date: .numeric, time: .omitted))…\n\n"
             localLogOutput += "\(nightLogged)\n\n"
-            localLogOutput += "Crypto Params: using default TFHE-rs params\n\n"
+            localLogOutput += "Crypto Params: using default Lux-FHE params\n\n"
         }
         
         try await ensureKeysExist()
@@ -335,7 +335,7 @@ final class HealthViewModel: ObservableObject {
         }
         
         self.weightConsoleOutput += "\(weight)\n\n"
-        self.weightConsoleOutput += "Crypto Params: using default TFHE-rs params\n\n"
+        self.weightConsoleOutput += "Crypto Params: using default Lux-FHE params\n\n"
         
         try await ensureKeysExist()
         

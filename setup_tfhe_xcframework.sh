@@ -7,7 +7,7 @@ set -e
 echo "Setting up TFHE.xcframework and TorusMLExtensions.xcframework..."
 
 # Define variables
-TFHE_RS_DIR="tfhe-rs"
+TFHE_RS_DIR="lux-fhe"
 OUTPUT_DIR="tfhe_build_output"
 INCLUDE_DIR="$OUTPUT_DIR/include"
 
@@ -22,7 +22,7 @@ rm -rf "$TFHE_RS_DIR" "$OUTPUT_DIR" "$TORUS_DIR" "$TORUS_OUTPUT_DIR" "$TORUS_GEN
 
 # Clone repositories
 echo "Cloning TFHE‑rs repository..."
-git clone https://github.com/luxfhe/tfhe-rs.git "$TFHE_RS_DIR"
+git clone https://github.com/luxfhe/lux-fhe.git "$TFHE_RS_DIR"
 
 echo "Cloning torus-ml-extensions repository (for torus_ml_extensions)..."
 git clone https://github.com/luxfhe/torus-ml-extensions.git "$TORUS_DIR"
