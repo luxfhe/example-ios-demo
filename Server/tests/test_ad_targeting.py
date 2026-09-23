@@ -5,7 +5,7 @@ import pickle as pkl
 import numpy as np
 import pytest
 
-import torus_ml_extensions as fhext
+import concrete_ml_extensions as fhext
 
 from utils import *
 

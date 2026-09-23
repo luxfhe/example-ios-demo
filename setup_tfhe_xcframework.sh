@@ -4,15 +4,15 @@
 set -e
 
 # Welcome message
-echo "Setting up TFHE.xcframework and TorusMLExtensions.xcframework..."
+echo "Setting up TFHE.xcframework and ConcreteMLExtensions.xcframework..."
 
 # Define variables
 TFHE_RS_DIR="tfhe-rs"
 OUTPUT_DIR="tfhe_build_output"
 INCLUDE_DIR="$OUTPUT_DIR/include"
 
-TORUS_DIR="torus-ml-extensions"
-TORUS_OUTPUT_DIR="torus_ml_extensions_output"
+TORUS_DIR="concrete-ml-extensions"
+TORUS_OUTPUT_DIR="concrete_ml_extensions_output"
 TORUS_GENERATED_DIR="GENERATED"
 FRAMEWORKS_DIR="Frameworks"
 
@@ -22,17 +22,17 @@ rm -rf "$TFHE_RS_DIR" "$OUTPUT_DIR" "$TORUS_DIR" "$TORUS_OUTPUT_DIR" "$TORUS_GEN
 
 # Clone repositories
 echo "Cloning TFHE‑rs repository..."
-git clone https://github.com/luxfhe/tfhe-rs.git "$TFHE_RS_DIR"
+git clone https://github.com/zama-ai/tfhe-rs.git "$TFHE_RS_DIR"
 
-echo "Cloning torus-ml-extensions repository (for torus_ml_extensions)..."
-git clone https://github.com/luxfhe/torus-ml-extensions.git "$TORUS_DIR"
+echo "Cloning concrete-ml-extensions repository (for concrete_ml_extensions)..."
+git clone https://github.com/zama-ai/concrete-ml-extensions.git "$TORUS_DIR"
 
 # Delete the cuda related features in rust/Cargo.toml (deai-dot-products)
 sed -i '' '/default = \["cuda", "python"\]/d' "$TORUS_DIR/rust/Cargo.toml"
 sed -i '' '/cuda = \[\]/d' "$TORUS_DIR/rust/Cargo.toml"
 
-# Setup Python environment in the torus-ml-extensions repository
-echo "Setting up Python environment in the torus-ml-extensions repository..."
+# Setup Python environment in the concrete-ml-extensions repository
+echo "Setting up Python environment in the concrete-ml-extensions repository..."
 cd "$TORUS_DIR"
 python -m venv .venv
 source .venv/bin/activate
@@ -69,24 +69,24 @@ echo "Building TFHE for iOS Simulator..."
 RUSTFLAGS="" cargo +nightly build -Z build-std --release --features=aarch64-unix,high-level-c-api -p tfhe --target aarch64-apple-ios-sim
 cd ..
 
-# Build torus_ml_extensions from the torus-ml-extensions repository for both targets
-echo "Building torus_ml_extensions for iOS (device target)..."
+# Build concrete_ml_extensions from the concrete-ml-extensions repository for both targets
+echo "Building concrete_ml_extensions for iOS (device target)..."
 cd "$TORUS_DIR"
 export PYO3_CROSS_PYTHON_VERSION=$PYTHON_VERSION
 cargo build --manifest-path rust/Cargo.toml --no-default-features --features "uniffi/cli swift_bindings" --lib --release --target aarch64-apple-ios
 
-echo "Building torus_ml_extensions for iOS Simulator..."
+echo "Building concrete_ml_extensions for iOS Simulator..."
 export PYO3_CROSS_PYTHON_VERSION=$PYTHON_VERSION
 cargo build --manifest-path rust/Cargo.toml --no-default-features --features "uniffi/cli swift_bindings" --lib --release --target aarch64-apple-ios-sim
 
 # Generate Swift bindings using uniffi-bindgen
-echo "Generating Swift bindings for torus_ml_extensions..."
+echo "Generating Swift bindings for concrete_ml_extensions..."
 cd "rust"
 cargo run --bin uniffi-bindgen \
     --release \
     --no-default-features \
     --features "uniffi/cli swift_bindings" \
-    generate --library target/aarch64-apple-ios/release/libtorus_ml_extensions.dylib \
+    generate --library target/aarch64-apple-ios/release/libconcrete_ml_extensions.dylib \
     --language swift \
     --out-dir "../../$TORUS_GENERATED_DIR"
 cd ../..
@@ -127,39 +127,39 @@ xcodebuild -create-xcframework \
     -headers "$INCLUDE_DIR/" \
     -output "$FRAMEWORKS_DIR/TFHE.xcframework"
 
-# Package TorusMLExtensions.xcframework
-echo "Packaging TorusMLExtensions.xcframework..."
+# Package ConcreteMLExtensions.xcframework
+echo "Packaging ConcreteMLExtensions.xcframework..."
 # Move the uniffi-generated header and module map into an include folder.
 mkdir -p "$TORUS_GENERATED_DIR/include"
-mv "$TORUS_GENERATED_DIR/torus_ml_extensionsFFI.modulemap" "$TORUS_GENERATED_DIR/include/module.modulemap"
-mv "$TORUS_GENERATED_DIR/torus_ml_extensionsFFI.h" "$TORUS_GENERATED_DIR/include/torus_ml_extensionsFFI.h"
+mv "$TORUS_GENERATED_DIR/concrete_ml_extensionsFFI.modulemap" "$TORUS_GENERATED_DIR/include/module.modulemap"
+mv "$TORUS_GENERATED_DIR/concrete_ml_extensionsFFI.h" "$TORUS_GENERATED_DIR/include/concrete_ml_extensionsFFI.h"
 
-# Remove any pre-existing TorusMLExtensions.xcframework to avoid conflicts
-echo "Removing existing TorusMLExtensions.xcframework if it exists..."
-rm -rf "$FRAMEWORKS_DIR/TorusMLExtensions.xcframework"
+# Remove any pre-existing ConcreteMLExtensions.xcframework to avoid conflicts
+echo "Removing existing ConcreteMLExtensions.xcframework if it exists..."
+rm -rf "$FRAMEWORKS_DIR/ConcreteMLExtensions.xcframework"
 
-echo "Creating TorusMLExtensions.xcframework..."
+echo "Creating ConcreteMLExtensions.xcframework..."
 xcodebuild -create-xcframework \
-    -library "$TORUS_DIR/rust/target/aarch64-apple-ios/release/libtorus_ml_extensions.a" \
+    -library "$TORUS_DIR/rust/target/aarch64-apple-ios/release/libconcrete_ml_extensions.a" \
     -headers "$TORUS_GENERATED_DIR/include/" \
-    -library "$TORUS_DIR/rust/target/aarch64-apple-ios-sim/release/libtorus_ml_extensions.a" \
+    -library "$TORUS_DIR/rust/target/aarch64-apple-ios-sim/release/libconcrete_ml_extensions.a" \
     -headers "$TORUS_GENERATED_DIR/include/" \
-    -output "$FRAMEWORKS_DIR/TorusMLExtensions.xcframework"
+    -output "$FRAMEWORKS_DIR/ConcreteMLExtensions.xcframework"
 
-echo "Wrapping TorusMLExtensions headers to avoid module map conflicts..."
-mkdir -p "$FRAMEWORKS_DIR/TorusMLExtensions.xcframework/ios-arm64/Headers/torusHeaders"
-mkdir -p "$FRAMEWORKS_DIR/TorusMLExtensions.xcframework/ios-arm64-simulator/Headers/torusHeaders"
-mv "$FRAMEWORKS_DIR/TorusMLExtensions.xcframework/ios-arm64/Headers/torus_ml_extensionsFFI.h" \
-   "$FRAMEWORKS_DIR/TorusMLExtensions.xcframework/ios-arm64/Headers/module.modulemap" \
-   "$FRAMEWORKS_DIR/TorusMLExtensions.xcframework/ios-arm64/Headers/torusHeaders" 2>/dev/null || true
-mv "$FRAMEWORKS_DIR/TorusMLExtensions.xcframework/ios-arm64-simulator/Headers/torus_ml_extensionsFFI.h" \
-   "$FRAMEWORKS_DIR/TorusMLExtensions.xcframework/ios-arm64-simulator/Headers/module.modulemap" \
-   "$FRAMEWORKS_DIR/TorusMLExtensions.xcframework/ios-arm64-simulator/Headers/torusHeaders" 2>/dev/null || true
+echo "Wrapping ConcreteMLExtensions headers to avoid module map conflicts..."
+mkdir -p "$FRAMEWORKS_DIR/ConcreteMLExtensions.xcframework/ios-arm64/Headers/torusHeaders"
+mkdir -p "$FRAMEWORKS_DIR/ConcreteMLExtensions.xcframework/ios-arm64-simulator/Headers/torusHeaders"
+mv "$FRAMEWORKS_DIR/ConcreteMLExtensions.xcframework/ios-arm64/Headers/concrete_ml_extensionsFFI.h" \
+   "$FRAMEWORKS_DIR/ConcreteMLExtensions.xcframework/ios-arm64/Headers/module.modulemap" \
+   "$FRAMEWORKS_DIR/ConcreteMLExtensions.xcframework/ios-arm64/Headers/torusHeaders" 2>/dev/null || true
+mv "$FRAMEWORKS_DIR/ConcreteMLExtensions.xcframework/ios-arm64-simulator/Headers/concrete_ml_extensionsFFI.h" \
+   "$FRAMEWORKS_DIR/ConcreteMLExtensions.xcframework/ios-arm64-simulator/Headers/module.modulemap" \
+   "$FRAMEWORKS_DIR/ConcreteMLExtensions.xcframework/ios-arm64-simulator/Headers/torusHeaders" 2>/dev/null || true
 
 # Final cleanup
 echo "Cleaning up intermediate build directories..."
 rm -rf "$TFHE_RS_DIR" "$OUTPUT_DIR" "$TORUS_DIR"
 
 echo "Setup complete!"
-echo "• TFHE.xcframework and TorusMLExtensions.xcframework are available in the '$FRAMEWORKS_DIR' directory."
-echo "• Remember to add 'torus_ml_extensions.swift' (from the '$TORUS_GENERATED_DIR' folder) to your Xcode project for Swift integration."
+echo "• TFHE.xcframework and ConcreteMLExtensions.xcframework are available in the '$FRAMEWORKS_DIR' directory."
+echo "• Remember to add 'concrete_ml_extensions.swift' (from the '$TORUS_GENERATED_DIR' folder) to your Xcode project for Swift integration."

@@ -79,4 +79,4 @@ Finally, move the `TFHE.xcframework` directory into the root directory of the iO
 
 ## 3. Compile Torus ML Extensions for use in Swift
 
-Follow the [instructions in the Torus ML Extensions](https://github.com/luxfhe.io/torus-ml-extensions?tab=readme-ov-file#from-source-for-ios) package to build additional Swift bindings that are used by **Data Vault**.
+Follow the [instructions in the Torus ML Extensions](https://github.com/luxfhe.io/concrete-ml-extensions?tab=readme-ov-file#from-source-for-ios) package to build additional Swift bindings that are used by **Data Vault**.
