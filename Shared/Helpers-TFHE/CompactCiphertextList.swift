@@ -1,4 +1,5 @@
-// Copyright © 2025 Lux. All rights reserved.
+// Copyright © 2025 Zama. All rights reserved.
+// Copyright © 2025 Lux Industries Inc.
 
 import Foundation
 import TFHE
